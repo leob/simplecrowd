@@ -1,0 +1,60 @@
+<% title("The Crowdfunding Network") %>
+
+<% content_for :wide_content do %>
+
+    <div class="section">
+
+      <div class="hero-wide">
+
+        <div class="container">
+          <div class="section">
+
+            <div class="hero-banner">
+
+              <h1 class="big-slogan" data-sr="enter from the top and hustle 50px over 1.5s"><%= t(:slogan_html) %></h1>
+              <h3 class="small-slogan" data-sr="enter bottom wait 1s"><%= t(:subslogan_html) %></h3>
+              <div class="call-to-action">
+                  <button class="call-to-action-btn" type="button"><%= t(:get_started) %>&nbsp;&nbsp;&nbsp;<i class="fa fa-arrow-circle-right"></i></button>
+                  <%= link_to(t(:learn_more), nil, class: "text-primary") %>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="container">
+
+      <div class="section">
+        <div class="content">
+          <div class="row">
+            <div class="content text-center">
+              <h2 class="h2"><%= t(:project_picks) %></h2>
+
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+<% end %>
+
+<% content_for :additional_scripts do %>
+    <%= javascript_include_tag 'scrollReveal.min' %>
+
+    <script type="text/javascript">
+        (function ($) {
+            'use strict';
+            window.sr = new scrollReveal({
+                reset: true,
+                move: '50px',
+                mobile: true
+            });
+        })();
+    </script>
+<% end %>

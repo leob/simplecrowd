@@ -1,0 +1,102 @@
+//
+// Some utility styles
+// --------------------------------------------------
+
+// section and content semantic styles
+.section {
+  @include make-row();
+}
+
+.content {
+  @include make-sm-column(12);
+}
+
+// utility styles with "!important"
+
+.text-primary,
+.text-primary:hover {
+  color: $brand-primary !important;
+}
+
+.text-secondary,
+.text-secondary:hover {
+  color: $brand-secondary !important;
+}
+
+.text-disabled,
+.text-disabled:hover {
+  color: $brand-disabled !important;
+}
+
+.text-inverse,
+.text-inverse:hover {
+  color: $brand-inverse !important;
+}
+
+.bg-primary {
+  background-color: $brand-primary !important;
+}
+
+.bg-secondary {
+  background-color: $brand-secondary !important;
+}
+
+// vertical offset helpers, from: http://pdenya.com/2013/08/08/vertical-space-in-bootstrap/
+.toffset  { margin-top: 2px; }
+.toffset1 { margin-top: 5px; }
+.toffset2 { margin-top: 10px; }
+.toffset3 { margin-top: 15px; }
+.toffset4 { margin-top: 30px; }
+.toffset5 { margin-top: 40px; }
+.toffset6 { margin-top: 60px; }
+.toffset7 { margin-top: 80px; }
+.toffset8 { margin-top: 100px; }
+.toffset9 { margin-top: 150px; }
+.toffset10 { margin-top: 200px; }
+
+.boffset  { margin-bottom: 2px; }
+.boffset1 { margin-bottom: 5px; }
+.boffset2 { margin-bottom: 10px; }
+.boffset3 { margin-bottom: 15px; }
+.boffset4 { margin-bottom: 30px; }
+.boffset5 { margin-bottom: 40px; }
+.boffset6 { margin-bottom: 60px; }
+.boffset7 { margin-bottom: 80px; }
+.boffset8 { margin-bottom: 100px; }
+.boffset9 { margin-bottom: 150px; }
+.boffset10 { margin-bottom: 200px; }
+
+.loffset  { margin-left: 2px; }
+.loffset1 { margin-left: 5px; }
+.loffset2 { margin-left: 10px; }
+.loffset3 { margin-left: 15px; }
+.loffset4 { margin-left: 30px; }
+.loffset5 { margin-left: 40px; }
+.loffset6 { margin-left: 60px; }
+.loffset7 { margin-left: 80px; }
+.loffset8 { margin-left: 100px; }
+.loffset9 { margin-left: 150px; }
+.loffset10 { margin-left: 200px; }
+
+.roffset  { margin-right: 2px; }
+.roffset1 { margin-right: 5px; }
+.roffset2 { margin-right: 10px; }
+.roffset3 { margin-right: 15px; }
+.roffset4 { margin-right: 30px; }
+.roffset5 { margin-right: 40px; }
+.roffset6 { margin-right: 60px; }
+.roffset7 { margin-right: 80px; }
+.roffset8 { margin-right: 100px; }
+.roffset9 { margin-right: 150px; }
+.roffset10 { margin-right: 200px; }
+
+/* centered columns styles */
+/*.row-centered {
+  text-align:center;
+}
+.col-centered {
+  display:inline-block;
+  float:none;
+  text-align:left;
+  margin-right:-4px;
+}*/

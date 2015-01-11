@@ -1,0 +1,100 @@
+//
+// Custom "hero unit" styles
+// --------------------------------------------------
+
+$hero-height: 453px;
+$hero-banner-offset-top: 160px;
+$hero-banner-offset-bottom: 50px;
+$hero-banner-height: $hero-height - $hero-banner-offset-top - $hero-banner-offset-bottom;
+
+$hero-height-sm: 253px;
+$hero-banner-offset-top-sm: 60px;
+$hero-banner-offset-bottom-sm: 20px;
+$hero-banner-height-sm: $hero-height-sm - $hero-banner-offset-top-sm - $hero-banner-offset-bottom-sm;
+
+.hero-wide {
+  @include make-sm-column(12, 0);
+  @extend .text-center;
+  height: $hero-height;
+  background-image: url("/images/bg.jpg");
+  background-size: cover;
+  background-position: center center;
+
+  @media (max-width: $screen-xs-max) {
+    height: $hero-height-sm;
+  }
+}
+
+.hero-banner {
+  top: $hero-banner-offset-top;
+  height: $hero-banner-height;
+  padding-top: 10px;
+  background-color: rgba(235, 235, 235, 0.80);
+  border-radius: $border-radius-large;
+  @include make-xs-column(8);
+  @include make-xs-column-offset(2);
+
+  @media (max-width: $screen-xs-max) {
+    padding-top: 0;
+    top: $hero-banner-offset-top-sm;
+    height: $hero-banner-height-sm;
+    // specify a min-width so the hero-banner box doesn't shrink too small on tiny screen sizes
+    min-width: 300px;
+    border-radius: $border-radius-base;
+  }
+}
+
+.big-slogan {
+  font-size: 40px;
+  font-weight: 400;
+
+  @media (max-width: $screen-xs-max) {
+    font-size: 30px;
+  }
+}
+
+.small-slogan {
+  font-size: 25px;
+  font-weight: 400;
+
+  @media (max-width: $screen-xs-max) {
+    font-size: 16px;
+  }
+}
+
+.call-to-action {
+  // .toffset4:
+  margin-top: 20px;
+
+  //"learn more" link:
+  a {
+    font-size: 16px;
+  }
+
+  @media (max-width: $screen-xs-max) {
+    // .toffset2:
+    margin-top: 10px;
+
+    //"learn more" link:
+    a {
+      font-size: 13px;
+    }
+  }
+}
+
+.call-to-action-btn {
+  @extend .btn;
+  @extend .btn-primary;
+  @extend .roffset3;
+  // call mixin for .btn-lg style
+  @include button-size($padding-large-vertical, $padding-large-horizontal, $font-size-large, $line-height-large, $border-radius-large);
+  // increase width
+  width: 180px;
+
+  @media (max-width: $screen-xs-max) {
+    // call mixin for .btn-sm style
+    @include button-size($padding-small-vertical, $padding-small-horizontal, $font-size-small, $line-height-small, $border-radius-small);
+    // increase width
+    width: 120px;
+  }
+}

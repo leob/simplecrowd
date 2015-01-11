@@ -1,0 +1,168 @@
+//
+// Custom fonts
+// --------------------------------------------------
+
+// CUSTOM FONTS - BASED ON VALUES IN: _variables-yeti.scss
+
+$web-font: "//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,300,700";
+//$web-font: "//fonts.googleapis.com/css?family=Roboto:300,400,500,700";
+//$web-font: "//fonts.googleapis.com/css?family=Lato:300,400,900,400italic";
+
+$font-family-sans-serif:  "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif !default;
+//$font-family-sans-serif:  "Roboto", sans-serif !default;
+//$font-family-sans-serif:  "Lato", sans-serif !default;
+
+//$font-family-sans-serif: "Helvetica Neue",​Helvetica,​Arial,​sans-serif !default;
+//$font-family-sans-serif: "Open Sans",​sans-serif !default;
+
+$font-family-serif:       Georgia, "Times New Roman", Times, serif !default;
+//** Default monospace fonts for `<code>`, `<kbd>`, and `<pre>`.
+$font-family-monospace:   Menlo, Monaco, Consolas, "Courier New", monospace !default;
+$font-family-base:        $font-family-sans-serif !default;
+
+$font-size-base:          15px !default;
+$font-size-large:         ceil(($font-size-base * 1.25)) !default; // ~18px
+$font-size-small:         12px !default; // ~12px
+
+$font-size-h1:            floor(($font-size-base * 2.6)) !default; // ~36px
+$font-size-h2:            floor(($font-size-base * 2.15)) !default; // ~30px
+$font-size-h3:            ceil(($font-size-base * 1.7)) !default; // ~24px
+$font-size-h4:            ceil(($font-size-base * 1.25)) !default; // ~18px
+$font-size-h5:            $font-size-base !default;
+$font-size-h6:            ceil(($font-size-base * 0.85)) !default; // ~12px
+
+//** Unit-less `line-height` for use in components like buttons.
+$line-height-base:        1.428571429 !default; // 20/14
+//** Computed "line-height" (`font-size` * `line-height`) for use with `margin`, `padding`, etc.
+$line-height-computed:    floor(($font-size-base * $line-height-base)) !default; // ~20px
+
+//** By default, this inherits from the `<body>`.
+$headings-font-family:    $font-family-base !default;
+$headings-font-weight:    300 !default;
+$headings-line-height:    1.1 !default;
+$headings-color:          inherit !default;
+
+@import url($web-font);
+
+
+//
+// Custom global variables
+// --------------------------------------------------
+
+//$background-color: #f5f5f5 !default;
+//$background-color: #fff !default;
+//$background-color: #f5f5f5 !default;
+
+$brand-primary: #fe9a2e !default;
+$brand-secondary: darken(#467bab, 10%) !default;
+$brand-disabled: grey !default;
+$brand-inverse: #fff !default;
+
+$border-radius-base:        4px !default;
+$border-radius-large:       6px !default;
+$border-radius-small:       3px !default;
+
+$grid-gutter-width:         30px !default;
+$gray-dark:              lighten(#000, 20%) !default;   // #333
+
+
+//
+// Custom navbar variables
+// --------------------------------------------------
+
+//
+// decreased max width as explained here:
+//
+// http://stackoverflow.com/questions/20057380/bootstrap-3-how-to-set-default-grid-to-960px-width/21107438#21107438
+//
+//$grid-gutter-width:         20px !default;
+//$container-large-desktop:   ((940px + $grid-gutter-width));
+
+//
+// CUSTOM NAVBAR - BASED ON VALUES IN: _variables-yeti.scss - BASED PARTIALLY ON BOOTSWATCH COSMO NAVBAR STYLES
+//
+// We have 2 versions of the navbar: an 'expanded' one and a 'shrinked' one. So how does that work? As follows:
+//
+// - 'small' screens (smartphone and so on) always use the 'shrinked' one
+//
+// - other screens (tablet, desktop) start with the 'expanded' one and then switch to the 'shrinked' one if the user
+//   scrolls down
+//
+// --------------------------------------------------
+
+// The heights for the two navbar variants:
+$navbar-expanded-height: 110px !default;
+$navbar-shrinked-height: 48px !default;
+
+// And the background colors for the two navbar variants:
+$navbar-expanded-background: rgba(0, 23, 32, 0.8);
+$navbar-shrinked-background: rgba(0, 23, 32, 0.98);
+
+//$navbar-height: $navbar-expanded-height !default;
+
+//
+// Make $navbar-shrinked-height (used on small screens) the default value for $navbar-height, so that the bootstrap/
+// bootswatch SASS code calculates the correct size for the collapse-button height used on small screens (because small
+// screens will use a 'shrinked' mavbar, so the collapse-button has to be sized based on that).
+//
+// The actual navbar-height on the screen/page will be either $navbar-expanded-height, or $navbar-shrinked-height,
+// depending on the screen size and whether the user has scrolled down or not (as explanated above).
+//
+$navbar-height: $navbar-shrinked-height !default;
+
+$navbar-margin-bottom:             $line-height-computed !default;
+$navbar-border-radius:             $border-radius-base !default;
+$navbar-padding-horizontal:        floor(($grid-gutter-width / 2)) !default;
+$navbar-padding-vertical:          (($navbar-height - $line-height-computed) / 2) !default;
+$navbar-collapse-max-height:       340px !default;
+
+$navbar-default-color:             #fff !default;
+$navbar-default-bg:                $gray-dark !default;
+$navbar-default-border:            darken($navbar-default-bg, 6.5%) !default;
+
+// Navbar links
+$navbar-default-link-color:                #fff !default;
+$navbar-default-link-hover-color:          #fff !default;
+$navbar-default-link-hover-bg:             #272727 !default;
+$navbar-default-link-active-color:         #fff !default;
+$navbar-default-link-active-bg:            #272727 !default;
+$navbar-default-link-disabled-color:       #ccc !default;
+$navbar-default-link-disabled-bg:          hsla(0, 100%, 100%, 0) !default;
+
+// Navbar brand label
+$navbar-default-brand-color:               $navbar-default-link-color !default;
+$navbar-default-brand-hover-color:         $navbar-default-brand-color !default;
+$navbar-default-brand-hover-bg:            hsla(0, 100%, 100%, 0) !default;
+
+// Navbar toggle
+$navbar-default-toggle-hover-bg:           hsla(0, 100%, 100%, 0) !default;
+$navbar-default-toggle-icon-bar-bg:        #fff !default;
+$navbar-default-toggle-border-color:       hsla(0, 100%, 100%, 0) !default;
+
+
+// Inverted navbar
+// Reset inverted navbar basics
+$navbar-inverse-color:                      #fff !default;
+$navbar-inverse-bg:                         $brand-primary !default;
+$navbar-inverse-border:                     darken($navbar-inverse-bg, 10%) !default;
+
+// Inverted navbar links
+$navbar-inverse-link-color:                 #fff !default;
+$navbar-inverse-link-hover-color:           #fff !default;
+$navbar-inverse-link-hover-bg:              darken($navbar-inverse-bg, 10%) !default;
+$navbar-inverse-link-active-color:          #fff !default;
+$navbar-inverse-link-active-bg:             darken($navbar-inverse-bg, 10%) !default;
+$navbar-inverse-link-disabled-color:        #444 !default;
+$navbar-inverse-link-disabled-bg:           hsla(0, 100%, 100%, 0) !default;
+
+// Inverted navbar brand label
+$navbar-inverse-brand-color:                $navbar-inverse-link-color !default;
+$navbar-inverse-brand-hover-color:          #fff !default;
+$navbar-inverse-brand-hover-bg:             hsla(0, 100%, 100%, 0) !default;
+
+// Inverted navbar toggle
+$navbar-inverse-toggle-hover-bg:            hsla(0, 100%, 100%, 0) !default;
+$navbar-inverse-toggle-icon-bar-bg:         #fff !default;
+$navbar-inverse-toggle-border-color:        hsla(0, 100%, 100%, 0) !default;
+
+

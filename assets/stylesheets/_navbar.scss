@@ -1,0 +1,153 @@
+//
+// Custom navbar styles
+// --------------------------------------------------
+
+//
+// Styles for our custom navigation bar.
+//
+// Our navbar actually comes in two variants, a 'shrinked' and an 'expanded' one:
+//
+// - the 'expanded' one is used for wide/big screens (deskytop, tablet)
+// - the 'shrinked' one is used (a) on wide screens when you scroll down, and (b) on small screens (smartphone etc).
+//
+// Both navbars (the shrinked and the expanded one) stay fixed at the top od the page when the page is scrolled down.
+//
+// The 'expanded' variant is transparent for a nice effect (some of the content can be 'under' the navbar - see the
+// "pushdown" styles below).
+//
+// --------------------------------------------------
+
+// small font navigation link
+.navlink-small {
+  color: $brand-inverse;
+}
+
+// right-justified navigation link (uses less right-padding)
+.navlink-justright {
+  padding-right: 8px !important;
+}
+
+// left-justified navigation link (uses less left-padding)
+.navlink-justleft {
+  padding-left: 8px !important;
+}
+
+//
+// A container style that pushes itself down so that it doesn't sit "under" the navbar but below it (pushed down).
+//
+// This CSS class can/should be used for content (such as a web form) for which it doesn't make sense to be partially
+// 'hidden' under the navbar.
+//
+.container.push-down {
+  margin-top: $navbar-expanded-height;
+}
+
+//
+// Pushdown style for small screens.
+//
+// On small screens we use the shrinked navbar, so the pushdown amount should be less.
+//
+@media (max-width: $screen-xs-max) {
+  .container.push-down {
+    margin-top: $navbar-shrinked-height;
+  }
+}
+
+//
+// Mixin for the 'expanded' navbar.
+//
+@mixin navbar-expanded {
+  background-color: $navbar-expanded-background;
+  font-size: 16px;
+  font-weight: 400;
+  // NOTE the height needs to be specified here explicitly like below, or else the css animation will not work - see:
+  // http://stackoverflow.com/questions/24765155/shrinking-navigation-bar-when-scrolling-down-bootstrap3/26969070#26969070
+  height: $navbar-expanded-height;
+  -webkit-transition: height 0.4s ease 0s, background-color 0.4s ease 0s;
+  transition: height 0.4s ease 0s, background-color 0.4s ease 0s;
+
+  .logo {
+    @include square(90px);
+  }
+
+  .navbar-header a {
+    padding: 10px 10px 2px 5px;
+  }
+
+  .navbar-slogan {
+    font-size: 20px;
+    padding-top: 38px;
+    margin-left:10px;
+    color: $brand-inverse;
+  }
+
+  .navbar-nav > li a {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    display: inline-block;
+  }
+
+  .navbar-nav > li .navlink-small {
+    padding-top: 42px;
+    padding-bottom: 38px;
+    display: inline-block;
+    font-size: 12px;
+  }
+}
+
+//
+// Mixin for the 'shrinked' navbar.
+//
+@mixin navbar-shrinked {
+  background-color: $navbar-shrinked-background;
+  font-size: 15px;
+  //line-height: $navbar-shrinked-height;
+  line-height: 21px;
+  height: $navbar-shrinked-height;
+  min-height: 35px;
+
+  .logo {
+    @include square(36px);
+  }
+
+  .navbar-header a {
+    padding: 6px 6px 2px 5px;
+  }
+
+  .navbar-slogan {
+    padding-top: 10px;
+    font-size: 15px;
+    //line-height: 21px;
+  }
+
+  .navbar-nav > li a {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    display: inline-block;
+  }
+
+  .navbar-nav > li .navlink-small {
+    padding-top: 12px;
+    padding-bottom: 10px;
+    display: inline-block;
+    font-size: 12px;
+  }
+
+  .navbar-container {
+    background-color: $navbar-shrinked-background;
+  }
+}
+
+// apply the mixins to the CSS class
+.navbar {
+  @include navbar-expanded();
+
+  @media (max-width: $screen-xs-max) {
+    @include navbar-shrinked();
+  }
+}
+
+// apply the mixins to the CSS class
+.navbar.navbar-shrink {
+  @include navbar-shrinked();
+}
