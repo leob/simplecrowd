@@ -15,7 +15,7 @@ if("undefined"==typeof jQuery)throw new Error("Bootstrap's Javascript requires j
 //    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
 //})();
 
-var ready = function() {
+/*var ready = function() {
     //
 }
 
@@ -24,4 +24,4 @@ $(document).on('page:load', ready);
 
 $(document).on('page:change', function() {
     //
-});
+});*/

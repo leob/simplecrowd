@@ -41,6 +41,9 @@ group :development, :test do
   gem 'sqlite3', '1.3.10'
 end
 
+# Simple_form: https://github.com/plataformatec/simple_form
+gem 'simple_form'
+
 # Devise: https://github.com/plataformatec/devise
 gem 'devise', '3.4.1'
 
