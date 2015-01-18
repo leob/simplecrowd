@@ -1,0 +1,12 @@
+<%# Rails form/model errors styled for Bootstrap 3.0 %>
+<% if model.errors.any? %>
+
+    <div class="form-errors">
+      <ul>
+        <% model.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+
+<% end %>

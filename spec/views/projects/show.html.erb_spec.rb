@@ -4,7 +4,8 @@ RSpec.describe "projects/show", :type => :view do
   before(:each) do
     @project = assign(:project, Project.create!(
       :name => "Name",
-      :description => "MyText"
+      :description => "MyText",
+      :editor_pick => false
     ))
   end
 
@@ -12,5 +13,6 @@ RSpec.describe "projects/show", :type => :view do
     render
     expect(rendered).to match(/Name/)
     expect(rendered).to match(/MyText/)
+    expect(rendered).to match(/false/)
   end
 end

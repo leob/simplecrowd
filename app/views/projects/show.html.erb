@@ -10,5 +10,10 @@
   <%= @project.description %>
 </p>
 
+<p>
+  <strong>Editor pick:</strong>
+  <%= @project.editor_pick %>
+</p>
+
 <%= link_to 'Edit', edit_project_path(@project) %> |
 <%= link_to 'Back', projects_path %>

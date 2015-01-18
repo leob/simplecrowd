@@ -6,6 +6,7 @@ require "active_record/railtie"
 require "action_controller/railtie"
 require "action_mailer/railtie"
 require "action_view/railtie"
+# COMMENTED OUT THIS lINE BECAUSE WE DON'T USE SPROCKETS (built-in Rails asset pipeline):
 # require "sprockets/railtie"
 require "rails/test_unit/railtie"
 
@@ -35,18 +36,25 @@ module Simplecrowd
     # Test framework
     config.generators.test_framework false
 
-    # generate controllers using standard scaffold template - this will include JSON responses automatically - see;
-    # http://stackoverflow.com/questions/26569280/customize-rails-generate-scaffold/27291758#27291758
-    config.app_generators.scaffold_controller :scaffold_controller
+    #
+    # UNCOMMENT the line below to generate controllers with JSON responses included:
+    #
+    #config.app_generators.scaffold_controller :scaffold_controller
+    #
+    # Uncommenting this line will cause "rails g scaffold ..." to include JSON responses in the controllers - see;
+    #         http://stackoverflow.com/questions/26569280/customize-rails-generate-scaffold/27291758#27291758
+    #
 
     # autoload lib path
     config.autoload_paths += %W(#{config.root}/lib)
     config.autoload_paths += Dir["#{config.root}/lib/**/"]
 
     config.generators do |g|
+      # ADDED THESE 4 LINES BECAUSE WE DON'T USE SPROCKETS (built-in Rails asset pipeline):
       g.assets false
       g.stylesheets false
       g.javascripts false
+      g.jbuilder false
       # the following 2 lines are PROBABLY not needed anymore
       g.test_framework :rspec
       g.integration_tool :rspec

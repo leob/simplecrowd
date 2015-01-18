@@ -1,5 +1,5 @@
 //
-// Custom "hero unit" styles
+// "Hero unit" styles
 // --------------------------------------------------
 
 $hero-height: 453px;
@@ -31,8 +31,8 @@ $hero-banner-height-sm: $hero-height-sm - $hero-banner-offset-top-sm - $hero-ban
   padding-top: 10px;
   background-color: rgba(235, 235, 235, 0.80);
   border-radius: $border-radius-large;
-  @include make-xs-column(8);
-  @include make-xs-column-offset(2);
+  @include make-xs-column(10);
+  @include make-xs-column-offset(1);
 
   @media (max-width: $screen-xs-max) {
     padding-top: 0;

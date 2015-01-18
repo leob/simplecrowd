@@ -1,22 +1,13 @@
 //
-// Custom fonts
+// Theme variables
 // --------------------------------------------------
 
 // CUSTOM FONTS - BASED ON VALUES IN: _variables-yeti.scss
-
 $web-font: "//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,300,700";
-//$web-font: "//fonts.googleapis.com/css?family=Roboto:300,400,500,700";
-//$web-font: "//fonts.googleapis.com/css?family=Lato:300,400,900,400italic";
 
 $font-family-sans-serif:  "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif !default;
-//$font-family-sans-serif:  "Roboto", sans-serif !default;
-//$font-family-sans-serif:  "Lato", sans-serif !default;
-
-//$font-family-sans-serif: "Helvetica Neue",​Helvetica,​Arial,​sans-serif !default;
-//$font-family-sans-serif: "Open Sans",​sans-serif !default;
 
 $font-family-serif:       Georgia, "Times New Roman", Times, serif !default;
-//** Default monospace fonts for `<code>`, `<kbd>`, and `<pre>`.
 $font-family-monospace:   Menlo, Monaco, Consolas, "Courier New", monospace !default;
 $font-family-base:        $font-family-sans-serif !default;
 
@@ -44,19 +35,12 @@ $headings-color:          inherit !default;
 
 @import url($web-font);
 
-
-//
-// Custom global variables
-// --------------------------------------------------
-
-//$background-color: #f5f5f5 !default;
-//$background-color: #fff !default;
-//$background-color: #f5f5f5 !default;
-
 $brand-primary: #fe9a2e !default;
 $brand-secondary: darken(#467bab, 10%) !default;
 $brand-disabled: grey !default;
 $brand-inverse: #fff !default;
+
+$footer-color: rgba(0, 23, 32, 0.98);
 
 $border-radius-base:        4px !default;
 $border-radius-large:       6px !default;
@@ -65,19 +49,13 @@ $border-radius-small:       3px !default;
 $grid-gutter-width:         30px !default;
 $gray-dark:              lighten(#000, 20%) !default;   // #333
 
-
 //
 // Custom navbar variables
 // --------------------------------------------------
-
 //
 // decreased max width as explained here:
 //
 // http://stackoverflow.com/questions/20057380/bootstrap-3-how-to-set-default-grid-to-960px-width/21107438#21107438
-//
-//$grid-gutter-width:         20px !default;
-//$container-large-desktop:   ((940px + $grid-gutter-width));
-
 //
 // CUSTOM NAVBAR - BASED ON VALUES IN: _variables-yeti.scss - BASED PARTIALLY ON BOOTSWATCH COSMO NAVBAR STYLES
 //
@@ -87,7 +65,6 @@ $gray-dark:              lighten(#000, 20%) !default;   // #333
 //
 // - other screens (tablet, desktop) start with the 'expanded' one and then switch to the 'shrinked' one if the user
 //   scrolls down
-//
 // --------------------------------------------------
 
 // The heights for the two navbar variants:
@@ -97,8 +74,6 @@ $navbar-shrinked-height: 48px !default;
 // And the background colors for the two navbar variants:
 $navbar-expanded-background: rgba(0, 23, 32, 0.8);
 $navbar-shrinked-background: rgba(0, 23, 32, 0.98);
-
-//$navbar-height: $navbar-expanded-height !default;
 
 //
 // Make $navbar-shrinked-height (used on small screens) the default value for $navbar-height, so that the bootstrap/
@@ -164,5 +139,4 @@ $navbar-inverse-brand-hover-bg:             hsla(0, 100%, 100%, 0) !default;
 $navbar-inverse-toggle-hover-bg:            hsla(0, 100%, 100%, 0) !default;
 $navbar-inverse-toggle-icon-bar-bg:         #fff !default;
 $navbar-inverse-toggle-border-color:        hsla(0, 100%, 100%, 0) !default;
-
 

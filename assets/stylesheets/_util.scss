@@ -1,15 +1,6 @@
 //
-// Some utility styles
+// Utility styles
 // --------------------------------------------------
-
-// section and content semantic styles
-.section {
-  @include make-row();
-}
-
-.content {
-  @include make-sm-column(12);
-}
 
 // utility styles with "!important"
 

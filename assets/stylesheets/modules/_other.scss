@@ -1,0 +1,30 @@
+//
+// Other styles which don't (yet) fit anywhere else, mixed bag of goodies ...
+// --------------------------------------------------
+
+// Scroll-to-top button, taken from shortcodes.css from  EVOLVE theme by alphawd (see also: Actra-next website)
+.btn-scroll-to-top:before {
+  color: #b8bcc0;
+  content: "\f106";
+  display: inline-block;
+  font: 14px "FontAwesome";
+  vertical-align: middle;
+}
+.btn-scroll-to-top.active {
+  opacity: 1;
+}
+.btn-scroll-to-top {
+  background-color: rgba(52, 56, 59, 0.8);
+  border-radius: 2px;
+  bottom: 30px;
+  cursor: pointer;
+  height: 44px;
+  line-height: 42px;
+  opacity: 0;
+  position: fixed;
+  right: 30px;
+  text-align: center;
+  transition: opacity 0.2s ease 0s;
+  width: 44px;
+}
+

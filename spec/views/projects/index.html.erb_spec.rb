@@ -5,11 +5,13 @@ RSpec.describe "projects/index", :type => :view do
     assign(:projects, [
       Project.create!(
         :name => "Name",
-        :description => "MyText"
+        :description => "MyText",
+        :editor_pick => false
       ),
       Project.create!(
         :name => "Name",
-        :description => "MyText"
+        :description => "MyText",
+        :editor_pick => false
       )
     ])
   end
@@ -18,5 +20,6 @@ RSpec.describe "projects/index", :type => :view do
     render
     assert_select "tr>td", :text => "Name".to_s, :count => 2
     assert_select "tr>td", :text => "MyText".to_s, :count => 2
+    assert_select "tr>td", :text => false.to_s, :count => 2
   end
 end

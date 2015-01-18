@@ -355,7 +355,6 @@
 
     $document.delegate(rails.linkClickSelector, 'click.rails', function(e) {
       var link = $(this), method = link.data('method'), data = link.data('params'), metaClick = e.metaKey || e.ctrlKey;
-
       if (!rails.allowAction(link)) return rails.stopEverything(e);
 
       if (!metaClick && link.is(rails.linkDisableSelector)) rails.disableElement(link);
@@ -368,7 +367,7 @@
         if (handleRemote === false) {
           rails.enableElement(link);
         } else {
-          handleRemote.error( function() { rails.enableElement(link); } );
+          handleRemote.fail( function() { rails.enableElement(link); } );
         }
         return false;
 
@@ -390,7 +389,7 @@
       if (handleRemote === false) {
         rails.enableFormElement(button);
       } else {
-        handleRemote.error( function() { rails.enableFormElement(button); } );
+        handleRemote.fail( function() { rails.enableFormElement(button); } );
       }
       return false;
     });

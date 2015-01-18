@@ -4,7 +4,8 @@ RSpec.describe "projects/edit", :type => :view do
   before(:each) do
     @project = assign(:project, Project.create!(
       :name => "MyString",
-      :description => "MyText"
+      :description => "MyText",
+      :editor_pick => false
     ))
   end
 
@@ -16,6 +17,8 @@ RSpec.describe "projects/edit", :type => :view do
       assert_select "input#project_name[name=?]", "project[name]"
 
       assert_select "textarea#project_description[name=?]", "project[description]"
+
+      assert_select "input#project_editor_pick[name=?]", "project[editor_pick]"
     end
   end
 end

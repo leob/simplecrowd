@@ -1,4 +1,4 @@
-module NavigationHelper
+module NavbarHelper
 
    #
    # Helper to generate a navbar nav option using a button (class 'btn'). The trick is to embed it inside a div, see:

@@ -4,7 +4,7 @@
     "jquery": "1.11.0",
     "bootstrap-sass-official": "~3.2.0",
     "bootswatch-scss": "3.2.0",
-    "jquery-ujs": "~1.0.2",
+    "jquery-ujs": "~1.0.3",
     "fontawesome": "~4.2.0",
     "scrollReveal.js": "~2.1.0"
   }

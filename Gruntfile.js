@@ -33,7 +33,7 @@ module.exports = function (grunt) {
                 files: [{
                     expand: true,
                     flatten: true,
-                    src: ['<%= paths.src.stylesheets %>/*.scss'],
+                    src: ['<%= paths.src.stylesheets %>/**/*.scss'],
                     dest: '<%= paths.dest %>/stylesheets/',
                     ext: '.css'
                 }]
@@ -134,7 +134,7 @@ module.exports = function (grunt) {
                 tasks: ['copy']                          //tasks to run
             },
             sass: {
-                files: ['<%= paths.src.stylesheets %>/*.scss'],
+                files: ['<%= paths.src.stylesheets %>/**'],
                 tasks: ['sass:dist']
             }
         }

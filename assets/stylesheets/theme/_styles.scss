@@ -1,0 +1,28 @@
+//
+// Theme styles
+// --------------------------------------------------
+
+// Override header font weight from 300 to 400; note: only on tag h1/h2/h3, not on class .h1/.h2/.h3; so, if you
+// want the original font weight then specify a CSS class h1/h2/h3
+h1, h2, h3 {
+  font-weight: 400;
+}
+
+// Button paddings - based on settings in Bootswatch Yeti theme
+
+.btn {
+  padding: 14px 28px;
+}
+
+.btn-lg {
+  padding: 16px 32px;
+}
+
+.btn-sm {
+  padding: 8px 16px;
+}
+
+.btn-xs {
+  padding: 4px 8px;
+}
+

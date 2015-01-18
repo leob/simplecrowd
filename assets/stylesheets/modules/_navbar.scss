@@ -1,5 +1,5 @@
 //
-// Custom navbar styles
+// Navbar styles
 // --------------------------------------------------
 
 //
@@ -63,8 +63,6 @@
   // NOTE the height needs to be specified here explicitly like below, or else the css animation will not work - see:
   // http://stackoverflow.com/questions/24765155/shrinking-navigation-bar-when-scrolling-down-bootstrap3/26969070#26969070
   height: $navbar-expanded-height;
-  -webkit-transition: height 0.4s ease 0s, background-color 0.4s ease 0s;
-  transition: height 0.4s ease 0s, background-color 0.4s ease 0s;
 
   .logo {
     @include square(90px);
@@ -103,8 +101,13 @@
   font-size: 15px;
   //line-height: $navbar-shrinked-height;
   line-height: 21px;
+  // NOTE the height needs to be specified here explicitly like below, or else the css animation will not work - see:
+  // http://stackoverflow.com/questions/24765155/shrinking-navigation-bar-when-scrolling-down-bootstrap3/26969070#26969070
   height: $navbar-shrinked-height;
   min-height: 35px;
+  // put the CSS transition on the shrunken navbar not on the expanded one because the latter causes a 'flash'/flicker
+  -webkit-transition: height 0.4s ease 0s, background-color 0.4s ease 0s;
+  transition: height 0.4s ease 0s, background-color 0.4s ease 0s;
 
   .logo {
     @include square(36px);

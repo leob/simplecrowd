@@ -22,7 +22,7 @@
 <body data-no-turbolink>
 <div id="wrap">
   <header>
-    <%= render 'layouts/navigation' %>
+    <%= render 'layouts/navbar' %>
   </header>
 
   <div class="container-fluid">
@@ -31,11 +31,7 @@
     <% else %>
 
         <div class="container push-down">
-          <div class="row">
-            <div class="col-sm-6 col-sm-offset-3 text-center">
-              <%= render 'layouts/messages' %>
-            </div>
-          </div>
+          <%= render 'layouts/flash_messages' %>
 
           <div class="row">
             <div class="col-sm-12">
@@ -49,6 +45,10 @@
   </div>
 
 </div>
+
+<% if !flash.empty? %>
+    <% flash.clear %>
+<% end %>
 
 <%= render 'layouts/footer' %>
 </div>
