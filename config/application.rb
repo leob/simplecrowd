@@ -55,13 +55,19 @@ module Simplecrowd
       g.stylesheets false
       g.javascripts false
       g.jbuilder false
+      g.test_framework :test_unit
       # the following 2 lines are PROBABLY not needed anymore
-      g.test_framework :rspec
-      g.integration_tool :rspec
+      #g.test_framework :rspec
+      #g.integration_tool :rspec
     end
+
+    # Do not swallow errors in after_commit/after_rollback callbacks.
+    config.active_record.raise_in_transactional_callbacks = true
 
     # See: http://robots.thoughtbot.com/content-compression-with-rack-deflater
     config.middleware.use Rack::Deflater
     config.middleware.insert_before ActionDispatch::Static, Rack::Deflater
+
+    config.active_support.test_order = :sorted
   end
 end
