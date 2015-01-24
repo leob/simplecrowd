@@ -59,5 +59,9 @@ module Simplecrowd
       g.test_framework :rspec
       g.integration_tool :rspec
     end
+
+    # See: http://robots.thoughtbot.com/content-compression-with-rack-deflater
+    config.middleware.use Rack::Deflater
+    config.middleware.insert_before ActionDispatch::Static, Rack::Deflater
   end
 end

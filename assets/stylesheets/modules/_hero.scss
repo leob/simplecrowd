@@ -12,13 +12,13 @@ $hero-banner-offset-top-sm: 60px;
 $hero-banner-offset-bottom-sm: 20px;
 $hero-banner-height-sm: $hero-height-sm - $hero-banner-offset-top-sm - $hero-banner-offset-bottom-sm;
 
-.hero-wide {
-  @include make-sm-column(12, 0);
+.hero-unit {
   @extend .text-center;
   height: $hero-height;
   background-image: url("/images/bg.jpg");
   background-size: cover;
   background-position: center center;
+  @include make-sm-column(12, 0);
 
   @media (max-width: $screen-xs-max) {
     height: $hero-height-sm;

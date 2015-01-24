@@ -68,6 +68,15 @@ group :production do
   gem 'unicorn'
 end
 
-group :development, :test do
-  gem 'rspec-rails', '~> 3.0.0'
+#group :development, :test do
+#  gem 'rspec-rails', '~> 3.0.0'
+#end
+
+gem "rails_config"
+
+group :development do
+  # https://github.com/rweng/pry-rails
+  gem 'pry-rails'
+  # https://github.com/michaeldv/awesome_print
+  gem 'awesome_print'
 end

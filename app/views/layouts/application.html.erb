@@ -19,13 +19,16 @@
 
   <%= csrf_meta_tags %>
 </head>
+
 <body data-no-turbolink>
+
 <div id="wrap">
   <header>
     <%= render 'layouts/navbar' %>
   </header>
 
   <div class="container-fluid">
+
     <% if content_for?(:wide_content) %>
         <%= yield :wide_content %>
     <% else %>
@@ -33,11 +36,7 @@
         <div class="container push-down">
           <%= render 'layouts/flash_messages' %>
 
-          <div class="row">
-            <div class="col-sm-12">
-              <%= yield %>
-            </div>
-          </div>
+          <%= yield %>
         </div>
 
     <% end %>
@@ -56,9 +55,11 @@
 <%= javascript_include_tag 'application', 'data-turbolinks-track' => false %>
 
 <%= render 'layouts/scripts' %>
+<%#= render 'layouts/google_analytics_js' %>
 
 <%= yield :additional_scripts %>
 
 <div class="btn-scroll-to-top"></div>
+
 </body>
 </html>

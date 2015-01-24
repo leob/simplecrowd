@@ -3,6 +3,10 @@ class PagesController < ApplicationController
     :inside
   ]
 
+def _bootstrap
+  render layout: false
+end
+
   def home
   end
   
