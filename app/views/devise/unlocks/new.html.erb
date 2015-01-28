@@ -1,16 +1,33 @@
-<h2>Resend unlock instructions</h2>
+<div class="row">
+  <div class="col-sm-6">
+    <h1>Resend unlock instructions</h1>
 
-<%= simple_form_for(resource, as: resource_name, url: unlock_path(resource_name), html: { method: :post }) do |f| %>
-  <%= devise_error_messages! %>
-  <%= f.full_error :unlock_token %>
+    <%= form_for(resource, :as => resource_name,
+                 :url => unlock_path(resource_name),
+                 :html => {:method => :post, :role => "form"}) do |f| %>
 
-  <div class="form-inputs">
-    <%= f.input :email, required: true, autofocus: true %>
+        <%# Should we replace 'devise_form_errors' with 'devise_error_messages!' ??  to be tested/sorted out ... %>
+        <%# Note: user lock/unlock functionality is currently not enabled! So this view will not be used 'now'. %>
+        <%= devise_form_errors %>
+        <%#= devise_error_messages! %>
+
+        <div class="form-group">
+          <%= f.label :email %>
+          <div class="row">
+            <div class="col-sm-6">
+              <%= f.email_field :email, :autofocus => true, class: "form-control" %>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-sm-6">
+            <%= f.submit "Resend unlock instructions", class: "btn btn-primary" %>
+          </div>
+        </div>
+    <% end %>
+
+    <%= render "devise/shared/links" %>
+
   </div>
-
-  <div class="form-actions">
-    <%= f.button :submit, "Resend unlock instructions" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+</div>

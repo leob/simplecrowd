@@ -32,9 +32,13 @@ gem 'friendly_id', '5.0.4'
 gem 'spring', group: :development
 
 # Figaro: https://github.com/laserlemon/figaro
-group :development, :test do
-  gem 'figaro', '1.0.0'
-end
+#group :development, :test do
+#  gem 'figaro', '1.0.0'
+#end
+
+# sort of the same thing as the figaro gem and 'secrets.yml' - do we really need it?? we should make a choice ... see:
+# https://shellycloud.com/documentation/environment_variables
+gem "rails_config"
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -50,7 +54,7 @@ group :development, :test do
 end
 
 # Simple_form: https://github.com/plataformatec/simple_form
-gem 'simple_form'
+#gem 'simple_form'
 
 # Devise: https://github.com/plataformatec/devise
 gem 'devise', '3.4.1'
@@ -79,8 +83,6 @@ end
 #group :development, :test do
 #  gem 'rspec-rails', '~> 3.0.0'
 #end
-
-gem "rails_config"
 
 group :development, :test do
   # https://github.com/rweng/pry-rails
