@@ -12,6 +12,9 @@ $hero-banner-offset-top-sm: 60px;
 $hero-banner-offset-bottom-sm: 20px;
 $hero-banner-height-sm: $hero-height-sm - $hero-banner-offset-top-sm - $hero-banner-offset-bottom-sm;
 
+$call-to-action-font-size: 16px;
+$call-to-action-font-size-small: 13px;
+
 .hero-unit {
   @extend .text-center;
   height: $hero-height;
@@ -68,7 +71,7 @@ $hero-banner-height-sm: $hero-height-sm - $hero-banner-offset-top-sm - $hero-ban
 
   //"learn more" link:
   a {
-    font-size: 16px;
+    font-size: $call-to-action-font-size;
   }
 
   @media (max-width: $screen-xs-max) {
@@ -77,7 +80,7 @@ $hero-banner-height-sm: $hero-height-sm - $hero-banner-offset-top-sm - $hero-ban
 
     //"learn more" link:
     a {
-      font-size: 13px;
+      font-size: $call-to-action-font-size-small;
     }
   }
 }
@@ -87,9 +90,15 @@ $hero-banner-height-sm: $hero-height-sm - $hero-banner-offset-top-sm - $hero-ban
   @extend .btn-primary;
   @extend .roffset3;
   // call mixin for .btn-lg style
-  @include button-size($padding-large-vertical, $padding-large-horizontal, $font-size-large, $line-height-large, $border-radius-large);
+  //@include button-size($padding-large-vertical, $padding-large-horizontal, $font-size-large, $line-height-large, $border-radius-large);
+  @include button-size($padding-small-vertical, $padding-small-horizontal, $call-to-action-font-size, $line-height-small, $border-radius-small);
   // increase width
   width: 180px;
+
+  @media (max-width: $screen-sm-max) {
+    // increase width
+    width: 160px;
+  }
 
   @media (max-width: $screen-xs-max) {
     // call mixin for .btn-sm style

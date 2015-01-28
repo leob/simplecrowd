@@ -36,6 +36,14 @@ group :development, :test do
   gem 'figaro', '1.0.0'
 end
 
+group :development, :test do
+  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
+  gem 'byebug'
+
+  # Access an IRB console on exception pages or by using <%= console %> in views
+#  gem 'web-console', '~> 2.0'
+end
+
 # SQLite 3
 group :development, :test do
   gem 'sqlite3', '1.3.10'
@@ -74,9 +82,17 @@ end
 
 gem "rails_config"
 
-group :development do
+group :development, :test do
   # https://github.com/rweng/pry-rails
   gem 'pry-rails'
+
+  gem 'pry-doc'
+
   # https://github.com/michaeldv/awesome_print
   gem 'awesome_print'
 end
+
+#group :development do
+#  gem "better_errors"
+#  gem "binding_of_caller"
+#end

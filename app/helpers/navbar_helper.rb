@@ -33,7 +33,7 @@ module NavbarHelper
 private
 
    def nav_link(name, path, html_options = nil)
-      link_to(t("link_" + name.downcase), path, html_options)
+      link_to(t("navbar." + name.downcase), path, html_options)
    end
 
 end

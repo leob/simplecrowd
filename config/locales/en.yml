@@ -20,25 +20,23 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  link_explore_projects: explore
-  link_how_it_works: how it works
-  link_start_project: start a project
-  link_my_4just1: my 4just1
-  link_sign_in: sign in
-  link_sign_out: sign out
-  link_nl: NL
-  link_en: EN
-  hello: "Hello world"
-  slogan: "the crowdfunding network"
-  # use '_html' suffix to suppress HTML escaping - this allows embedding HTML tags if desirable
-  slogan_html: "Create your world"
-  # use '_html' suffix to suppress HTML escaping - this allows embedding HTML tags if desirable
-  #subslogan_html: "Easily %{create_href} your project. Or %{donate_href} to a good cause!"
-  subslogan_html: "4just1 makes it easy to raise funds for your good cause"
-  #create_href: "create"
-  #donate_href: "donate"
-  get_started: "Get started"
-  learn_more: "Learn more"
-  project_quickstart: "Start your project"
-  project_picks: "Some great projects"
-  more_about: "More about 4just1"
+  navbar:
+    explore_projects: explore
+    how_it_works: how it works
+    start_project: start a project
+    my_4just1: my 4just1
+    sign_in: sign in
+    sign_out: sign out
+    nl: NL
+    en: EN
+  home:
+    hero_unit:
+      # use '_html' suffix to suppress HTML escaping - this allows embedding HTML tags if desirable
+      slogan_html: "Create your world"
+      # use '_html' suffix to suppress HTML escaping - this allows embedding HTML tags if desirable
+      subslogan_html: "4just1 makes it easy to fund your good cause"
+      project_title_label: Project title
+      project_title_placeholder: Enter your project name
+      get_started: "Get started"
+    selected_projects:
+      title: "Some great projects"
