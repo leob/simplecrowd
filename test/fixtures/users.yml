@@ -1,0 +1,32 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+# non-confirmed user, this will not work for sign-in
+non_confirmed_user:
+  email: nonconfirmed@example.org
+
+#
+# Note:
+#
+# this is all that is needed to be able to sign in a user "user" within a controller test, like this:
+#
+# sign_in users(:regular_user)
+#
+# where 'sign_in' is a Devise helper method
+#
+regular_user:
+  email: regular@example.org
+  confirmed_at: 2015/01/01
+
+# setting the email and encrypoted password - it turns out these are not needed for logging in with Devise's sign_in
+# within controller tests! only the "confirmed_at" field is needed, Devise checks that the user is 'confirmed'
+admin_user:
+  email: admin@example.org
+  encrypted_password: p456
+  confirmed_at: 2015/01/01
+
+# again the 'encrypted_password' (and email) fields aren't needed for controller tests, but the code below shows how
+# to set the encrypted password with 'digest'
+test_user:
+  email: test@example.org
+  encrypted_password: <%= User.new.send(:password_digest, '123greetings') %>
+  confirmed_at: 2015/01/01

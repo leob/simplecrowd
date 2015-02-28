@@ -3,7 +3,7 @@ class PagesController < ApplicationController
     :inside
   ]
 
-def _bootstrap
+def bootstrap
   render layout: false
 end
 

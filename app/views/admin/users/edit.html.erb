@@ -1,4 +1,4 @@
-<% title("Edit User Id: #{@user.id}") %>
+<% page_title("Edit User Id: #{@user.id}") %>
 <div class="row">
   <div class="col-sm-6">
     <h1>
@@ -60,6 +60,7 @@
     </div>    
     
     <% end %>
-
+    <hr/>
+    <%= link_to "<i class='fa fa-minus-square'></i> Delete user".html_safe, admin_user_path(@user), method: :delete, data:{confirm: "Are you sure?"}, class: "btn btn-small btn-danger" %>
   </div>
 </div>

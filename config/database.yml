@@ -13,8 +13,8 @@ default: &default
   adapter: mysql2
   encoding: utf8
   pool: 5
-  username: root
-  password: root
+  username: <%= ENV['DB_DEV_USER'] %>
+  password: <%= ENV['DB_DEV_PWD'] %>
   socket: /var/run/mysqld/mysqld.sock
 
 development:
@@ -50,8 +50,11 @@ test:
 #   production:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
-#production:
-#  <<: *default
-#  database: simplecrowd2_production
-#  username: simplecrowd2
-#  password: <%= ENV['SIMPLECROWD2_DATABASE_PASSWORD'] %>
+production:
+  #<<: *default
+  adapter: postgresql
+  database: simplecrowd_prod
+  host: localhost
+  pool: 5
+  username: <%= ENV['DB_PROD_USER'] %>
+  password: <%= ENV['DB_PROD_PWD'] %>

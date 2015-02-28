@@ -5,7 +5,6 @@ class Admin::UsersController < Admin::BaseController
     :update,
     :destroy
   ]
-  
 
   def index
     @users = User.search_and_order(params[:search], params[:page])
@@ -41,8 +40,12 @@ class Admin::UsersController < Admin::BaseController
       render :edit
     end
   end
-  
-  
+
+  def destroy
+    @user.destroy
+    redirect_to admin_posts_path, notice: "The user has been deleted."
+  end
+
   private 
   
   def set_user

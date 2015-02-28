@@ -42,9 +42,12 @@ $brand-inverse: #fff !default;
 
 $footer-color: rgba(0, 23, 32, 0.98);
 
-$border-radius-base:        4px !default;
-$border-radius-large:       6px !default;
-$border-radius-small:       3px !default;
+//$border-radius-base:        4px !default;
+//$border-radius-large:       6px !default;
+//$border-radius-small:       3px !default;
+$border-radius-base:        0px !default;
+$border-radius-large:       0px !default;
+$border-radius-small:       0px !default;
 
 $grid-gutter-width:         30px !default;
 $gray-dark:              lighten(#000, 20%) !default;   // #333

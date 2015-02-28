@@ -7,9 +7,10 @@ class User < ActiveRecord::Base
    # :confirmable, :lockable, :timeoutable and :omniauthable
    devise :database_authenticatable, :registerable,
           :recoverable, :rememberable, :trackable, :validatable, :confirmable
+   # TODO add these? :lockable, :timeoutable and :omniauthable
 
    # Pagination
-   paginates_per 100
+   paginates_per 30
 
    # Validations
    # :email
@@ -39,6 +40,7 @@ class User < ActiveRecord::Base
    end
 
    def self.users_count
-      where("admin = ? AND locked = ?", false, false).count
+      #where("admin = ? AND locked = ?", false, false).count
+      count
    end
 end

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150118170300) do
+ActiveRecord::Schema.define(version: 20150226201124) do
 
   create_table "friendly_id_slugs", force: :cascade do |t|
     t.string   "slug",           limit: 255, null: false
@@ -40,12 +40,26 @@ ActiveRecord::Schema.define(version: 20150118170300) do
   add_index "posts", ["user_id"], name: "index_posts_on_user_id", using: :btree
 
   create_table "projects", force: :cascade do |t|
-    t.string   "name",        limit: 255
-    t.text     "description", limit: 65535
-    t.boolean  "editor_pick", limit: 1
-    t.datetime "created_at",                null: false
-    t.datetime "updated_at",                null: false
+    t.string   "name",                      limit: 80
+    t.text     "summary",                   limit: 65535
+    t.text     "description",               limit: 65535
+    t.integer  "user_id",                   limit: 4
+    t.integer  "target_amount_cents",       limit: 4,     default: 0,     null: false
+    t.string   "target_amount_currency",    limit: 255,   default: "EUR", null: false
+    t.integer  "collected_amount_cents",    limit: 4,     default: 0,     null: false
+    t.string   "collected_amount_currency", limit: 255,   default: "EUR", null: false
+    t.boolean  "draft",                     limit: 1
+    t.boolean  "disabled",                  limit: 1
+    t.boolean  "editor_pick",               limit: 1
+    t.datetime "created_at",                                              null: false
+    t.datetime "updated_at",                                              null: false
+    t.string   "main_image_file_name",      limit: 255
+    t.string   "main_image_content_type",   limit: 255
+    t.integer  "main_image_file_size",      limit: 4
+    t.datetime "main_image_updated_at"
   end
+
+  add_index "projects", ["user_id"], name: "index_projects_on_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  limit: 255, default: "",    null: false
@@ -72,4 +86,5 @@ ActiveRecord::Schema.define(version: 20150118170300) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
+  add_foreign_key "projects", "users"
 end

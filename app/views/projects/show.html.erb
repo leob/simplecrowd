@@ -1,4 +1,4 @@
-<p id="notice"><%= notice %></p>
+<%#p id="notice"><%= notice ></p %>
 
 <p>
   <strong>Name:</strong>
@@ -8,6 +8,16 @@
 <p>
   <strong>Description:</strong>
   <%= @project.description %>
+</p>
+
+<p>
+  <strong>Summary:</strong>
+  <%= @project.summary %>
+</p>
+
+<p>
+  <strong>Main image:</strong>
+  <%= image_tag @project.main_image.url %>
 </p>
 
 <p>

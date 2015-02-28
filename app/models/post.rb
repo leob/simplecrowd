@@ -1,7 +1,7 @@
 class Post < ActiveRecord::Base
   # Use friendly_id
-  extend FriendlyId
-  friendly_id :title, use: :slugged
+  #extend FriendlyId
+  #friendly_id :title, use: :slugged
   
   # Markdown
   before_save { Markdown.update_html(self) }
@@ -11,7 +11,7 @@ class Post < ActiveRecord::Base
   validates :content_md, presence: true
   
   # Pagination
-  paginates_per 30  
+  paginates_per 30
   
   # Relations
   belongs_to :user

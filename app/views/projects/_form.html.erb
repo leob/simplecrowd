@@ -1,27 +1,36 @@
-<%= form_for(@project, role: "form") do |f| %>
+<%= form_for(@project, role: "form", :html => { :multipart => true }) do |f| %>
     <%= form_errors @project %>
 
-    <div class="form-group">
-      <%= f.label :name %>
-      <div class="row">
-        <div class="col-sm-6">
-          <%= f.text_field :name, class: "form-control", :autofocus => true %>
-        </div>
-      </div>
-    </div>
+    <%= form_text_field(f, :name, field_options: {autofocus: true, maxlength: 35, size: 35}) %>
+    <%= form_text_area(f, :summary, field_options: {rows: 4, maxlength: 250, size: 250}) %>
+    <%= form_text_area(f, :description, field_options: {rows: 6}) %>
 
-    <div class="form-group">
-      <%= f.label :description %>
-      <div class="row">
-        <div class="col-sm-6">
-          <%= f.text_area :description, class: "form-control" %>
-        </div>
-      </div>
-    </div>
+    <%= form_group(f, :main_image) do %>
+        <span class="btn btn-default btn-file">
+            <i class='fa fa-arrow-circle-down'></i> &nbsp; <%= t('forms.general.select_a_file') %> <%= f.file_field :main_image %>
+        </span>
 
-    <div class="row">
-      <div class="col-sm-6">
-        <%= f.submit nil, class: "btn btn-primary" %>
-      </div>
-    </div>
+        &nbsp; <b><%= t('forms.general.selected_file') %></b> <span id="selected-file"> <%= t('forms.general.no_file_selected') %> </span>
+    <% end %>
+
+    <%= form_group(f, :editor_pick) do %>
+        <%= f.check_box :editor_pick %>
+    <% end %>
+
+    <%= form_submit_button(f) %>
+<% end %>
+
+<%#
+    File upload control, see: http://www.abeautifulsite.net/whipping-file-inputs-into-shape-with-bootstrap-3
+    Depends on "fileselect" event, see code in 'application.js'.
+%>
+<% content_for :additional_scripts do %>
+    <%# Javascript handler for %>
+    <script type="text/javascript">
+        $(document).ready( function() {
+            $('.btn-file :file').on('fileselect', function(event, numFiles, file) {
+                $('#selected-file').text(file);
+            });
+        });
+    </script>
 <% end %>

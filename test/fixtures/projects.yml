@@ -1,11 +1,28 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+# Read about fixtures at
+# http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
-  name: MyString
+  name: One
+  summary: MyText
   description: MyText
+  user: admin_user
+  target_amount_currency: EUR
+  target_amount_cents: 20000
+  collected_amount_currency: EUR
+  collected_amount_cents: 1000
+  draft: false
+  disabled: false
   editor_pick: false
 
 two:
-  name: MyString
+  name: Two
+  summary: MyText
   description: MyText
-  editor_pick: false
+  user: admin_user
+  target_amount_currency: EUR
+  target_amount_cents: 10000
+  collected_amount_currency: EUR
+  collected_amount_cents: 10000
+  draft: false
+  disabled: false
+  editor_pick: true

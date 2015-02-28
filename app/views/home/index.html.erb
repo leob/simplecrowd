@@ -1,8 +1,8 @@
-<% title("The Crowdfunding Network") %>
+<% page_title("The Crowdfunding Network") %>
 
 <% content_for :wide_content do %>
 
-    <%= render 'hero_unit' %>
+    <%= render 'home/hero/hero_unit' %>
     <%= render 'selected_projects' %>
 
 <% end %>
@@ -20,4 +20,12 @@
             });
         })();
     </script>
+
+    <!--script type="text/javascript">
+        $(document).ready( function() {
+            $(function () {
+                $('[data-toggle="tooltip"]').tooltip()
+            });
+        });
+    </script-->
 <% end %>

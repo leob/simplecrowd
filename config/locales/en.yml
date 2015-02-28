@@ -20,6 +20,28 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
+  forms:
+    general:
+      select_a_file: Choose a file ...
+      no_file_selected: no file selected yet
+      selected_file: "Selected file:"
+    errors:
+      invalid_file_type: file type is not allowed (only jpeg/png/gif images)
+      invalid_file_size: file must be less than %{size_mb} megabytes in size
+    sign_in:
+      title: Sign in
+      submit: Sign in
+    sign_up:
+      title: Sign up
+      submit: Sign up
+    edit_profile:
+      title: Edit your profile
+      submit: Update
+    projects:
+      title: Projects
+  pages:
+    signed_off:
+      title: You are signed off now
   navbar:
     explore_projects: explore
     how_it_works: how it works
@@ -32,11 +54,26 @@ en:
   home:
     hero_unit:
       # use '_html' suffix to suppress HTML escaping - this allows embedding HTML tags if desirable
-      slogan_html: "Create your world"
+      slogan_html: Create your world
       # use '_html' suffix to suppress HTML escaping - this allows embedding HTML tags if desirable
-      subslogan_html: "4just1 makes it easy to fund your good cause"
-      project_title_label: Project title
-      project_title_placeholder: Enter your project name
-      get_started: "Get started"
+      subslogan_html: 4just1 makes it easy to fund your good cause
+      project_name_label: Project name
+      project_name_placeholder: Enter your project name
+      project_name_tooltip: Here you can quickly try out creating a project of your own! Enter a name for your project, you can always change it later.
+      project_category_label: Category
+      project_category_tooltip: Here you can quickly try out creating a project of your own! Select a category for your project, you can always change it later.
+      project_submit: Try it
+      project_submit_tooltip: Here you can quickly try out creating a project of your own! After clicking the button a 'draft' version is created, nothing is final!
     selected_projects:
-      title: "Some great projects"
+      title: Some great projects
+  activerecord:
+    attributes:
+      user:
+        email: Email
+        password: Password
+        remember_me: Remember me
+      project:
+        name: Name
+        summary: Summary
+        description: Description
+

@@ -1,5 +1,3 @@
-<!--% if !user_signed_in? %-->
-
 <%= nav("explore_projects", projects_path) %>
 <%= nav("how_it_works", nil) %>
 
@@ -9,26 +7,12 @@
 
 <%=
     content_tag(:li) do
-       nav_link("NL", nil, disabled: true, class: "navlink-small text-disabled navlink-justright") +
+       nav_link("NL", '/', class: "navlink-small " + (current_locale == 'nl' ? "text-disabled " : "" ) + "navlink-justright") +
 
            content_tag(:span, class: "navlink-small navlink-justleft navlink-justright") do
               "/"
            end +
 
-           nav_link("EN", nil, class: "navlink-small navlink-justleft")
+           nav_link("EN", '/en', class: "navlink-small " + (current_locale == 'en' ? "text-disabled " : "" ) + "navlink-justleft")
     end
 %>
-
-<!--% else %>
-    <li><= link_to "sign in", new_user_session_path %></li>
-    <li><= link_to "posts", posts_path %></li>
-    <li><= link_to "contact", contact_path %></li>
-    <li><= link_to "protected Page", inside_path %></li>
-    <li><= link_to "edit your account", edit_user_registration_path %></li>
-
-< if current_user.admin? %>
-<li><= link_to "admin", admin_root_path %></li>
-< end %>
-
-<li><= link_to "sign out", destroy_user_session_path, data: {method: :delete} %></li>
-< end %-->

@@ -1,0 +1,8 @@
+<div class="form-group">
+  <%= f.label column %>
+  <div class="row">
+    <div class="<%= options[:wrapper_class] %>">
+      <%= render partial: control, locals: {f: f, column: column, options: options} %>
+    </div>
+  </div>
+</div>

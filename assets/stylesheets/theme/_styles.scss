@@ -26,3 +26,16 @@ h1, h2, h3 {
   padding: 4px 8px;
 }
 
+// Customize tooltips, see: http://www.jeffmould.com/2013/10/30/style-bootstrap-3-0-tooltips/
+.tooltip.bottom .tooltip-arrow {
+  top: 0;
+  left: 50%;
+  margin-left: -5px;
+  border-bottom-color: #000000;
+  border-width: 0 5px 5px;
+}
+.tooltip-inner {
+  color: #000;
+  background: #fff;
+  border: solid 1px #fff;
+}
