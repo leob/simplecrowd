@@ -1,0 +1,49 @@
+<div class="project-block">
+  <div class="project-block-thumbnail"> <!--img-thumbnail img-responsive"-->
+    <%#
+        We use: "image_tag project.main_image.url", which is the same as: "image_tag project.main_image.url :prethumb".
+
+        This is the same because we configured ':prethumb' as the default style in config/paperclip_default.rb.
+
+        If you want another style, e.g. you want to display the original image, then you can still write:
+
+        "image_tag project.main_image.url :original".
+    %>
+    <%= image_tag project.image.url, class: "project-block-image" %>
+  </div>
+
+  <div class="project-block-content">
+    <p class="project-block-title"><%= project.name %></p>
+
+    <div class="project-block-text"><%== project.summary %></div>
+    <div class="project-block-text-fade"></div>
+  </div>
+
+  <div class="project-block-footer">
+    <% perc = project.percentage.to_i %>
+    <div class="progress project-block-progress">
+      <div class="progress-bar"
+           style="width: <%= perc %>%;"
+           aria-valuemax="100" aria-valuemin="0" aria-valuenow="<%= perc %>"
+           role="progressbar">
+
+        <span class="sr-only"><%= perc %>%</span>
+      </div>
+    </div>
+
+    <ul class="project-block-stats">
+      <li class="margin5">
+        <div class="project-block-stats-value"><%= perc %>%</div>
+        <span class="project-block-stats-label"><%= t('project_block.stats.funded') %></span>
+      </li>
+      <li class="margin6">
+        <div class="project-block-stats-value"><%= project.target_amount.format %></div>
+        <span class="project-block-stats-label"><%= t('project_block.stats.target') %></span>
+      </li>
+      <li>
+        <div class="project-block-stats-value"><%= project.days_to_go %></div>
+        <span class="project-block-stats-label"><%= t('project_block.stats.days_left') %></span>
+      </li>
+    </ul>
+  </div>
+</div>

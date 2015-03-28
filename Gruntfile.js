@@ -69,6 +69,12 @@ module.exports = function (grunt) {
                 src: ['<%= paths.src.bower %>/scrollReveal.js/dist/scrollReveal.min.js'],
                 dest: '<%= paths.dest %>/javascripts/',
                 filter: 'isFile'
+            }, /* copy whole directory, see: http://stackoverflow.com/questions/18966485/copy-all-files-from-directory-to-another-with-grunt-js-copy/23670172#23670172 */
+            tinymce: {
+                cwd: '<%= paths.src.bower %>/tinymce',
+                src: '**/*',
+                dest: '<%= paths.dest %>/javascripts/tinymce',
+                expand: true
             }
         },
         concat: {

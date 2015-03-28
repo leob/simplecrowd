@@ -6,8 +6,8 @@
       <%=
           text_field_tag(:name, nil, class: "form-control",
                          placeholder: t('home.hero_unit.project_name_placeholder'),
-                         data: {toggle: "tooltip", placement: "bottom", delay: "500"},
-                         title: t('home.hero_unit.project_name_tooltip'))
+                         data: {toggle: "tooltip", placement: "bottom", delay: "500", html: "true"},
+                         title: t('home.hero_unit.project_name_tooltip_html'))
       %>
     </div>
 
@@ -26,14 +26,14 @@
                                      ["-other/choose later-", "other"]
                              ]
                      ), class: "form-control", prompt: "-select category-",
-                     data: {toggle: "tooltip", placement: "bottom", delay: "500"},
-                     title: t('home.hero_unit.project_category_tooltip')
+                     data: {toggle: "tooltip", placement: "bottom", delay: "500", html: "true"},
+                     title: t('home.hero_unit.project_category_tooltip_html')
           ) %>
     </div>
 
     <button class="call-to-action-btn" type="submit"
-            data-toggle="tooltip" data-placement="bottom" , data-delay="500"
-            title="<%= t('home.hero_unit.project_submit_tooltip') %>">
+            data-toggle="tooltip" data-placement="bottom" data-delay="500" data-html="true"
+            title="<%= t('home.hero_unit.project_submit_tooltip_html') %>">
 
         <%= t('home.hero_unit.project_submit') %>&nbsp;&nbsp;&nbsp;<i class="fa fa-arrow-circle-right"></i>
     </button>

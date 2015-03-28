@@ -13,7 +13,8 @@ $font-family-base:        $font-family-sans-serif !default;
 
 $font-size-base:          15px !default;
 $font-size-large:         ceil(($font-size-base * 1.25)) !default; // ~18px
-$font-size-small:         12px !default; // ~12px
+//$font-size-small:         12px !default; // ~12px
+$font-size-small:         13px !default; // ~12px
 
 $font-size-h1:            floor(($font-size-base * 2.6)) !default; // ~36px
 $font-size-h2:            floor(($font-size-base * 2.15)) !default; // ~30px
@@ -41,6 +42,28 @@ $brand-disabled: grey !default;
 $brand-inverse: #fff !default;
 
 $footer-color: rgba(0, 23, 32, 0.98);
+
+$input-border-focus:             #bbb !default;
+
+// PROGRESS BAR - overrides
+$border-radius-progress:        4px !default;
+$progress-bar-bg: rgb(43,222,115) !default;
+
+// BUTTON COLORS - override btn-primary and define a 'btn-action'
+
+$btn-primary-color:              #fff !default;
+$btn-primary-bg:                 #008cba !default;   //$brand-primary !default;
+//$btn-primary-bg:                 #43ac6a !default;   //$brand-primary !default;
+//$btn-primary-bg:                 #F04124 !default;   //$brand-primary !default;
+$btn-primary-border:             darken($btn-primary-bg, 5%) !default;
+
+//background-color: #008cba;
+//border-color: #0079a1;
+//color: #ffffff;
+
+$btn-action-color:              #fff !default;
+$btn-action-bg:                 $brand-primary !default;
+$btn-action-border:             darken($btn-action-bg, 5%) !default;
 
 //$border-radius-base:        4px !default;
 //$border-radius-large:       6px !default;

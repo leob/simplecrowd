@@ -6,6 +6,7 @@
     "bootswatch-scss": "3.2.0",
     "jquery-ujs": "~1.0.3",
     "fontawesome": "~4.2.0",
-    "scrollReveal.js": "~2.1.0"
+    "scrollReveal.js": "~2.1.0",
+    "tinymce": "~4.1.7"
   }
 }

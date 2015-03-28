@@ -1,7 +1,20 @@
 <div class="content-container">
-  <div class="content-row">
-    <div class="content-col text-center">
-      <h3><%= t('home.selected_projects.title') %></h3>
+  <div class="content-row content-row-smaller">
+    <div class="content-col">
+      <h3 class="text-center"><%= t('home.selected_projects.title') %></h3>
+
+      <% @selected_projects.each_slice(4) do |row| %>
+          <div class="row">
+
+            <% row.each do |project| %>
+                <div class="col-md-3 col-sm-6 col-xs-12">
+                  <div class="center-block">        <!--div class="col-padding-extra center-block"-->
+                    <%= render partial: 'projects/block', locals: {project: project} %>
+                  </div>
+                </div>
+            <% end %>
+          </div>
+      <% end %>
     </div>
   </div>
 </div>

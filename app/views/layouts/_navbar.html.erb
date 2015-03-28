@@ -11,12 +11,14 @@
       <%= link_to root_path, class: "navbar-brand" do %>
           <%= image_tag("logo.png", class: "logo") %>
       <% end %>
+
+      <div class="nav navbar-nav navbar-left navbar-slogan">
+        <%= link_to root_path do %>
+            the crowdfunding network
+        <% end %>
+      </div>
     </div>
-    <div class="nav navbar-nav navbar-left navbar-slogan hidden-xs hidden-sm">
-      <%= link_to root_path do %>
-          the crowdfunding network
-      <% end %>
-    </div>
+
     <div class="collapse navbar-collapse">
       <ul class="nav navbar-nav navbar-right">
         <%= render 'layouts/navbar_links' %>

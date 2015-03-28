@@ -57,13 +57,50 @@ module FormHelper
    #
    # We are doing this by rendering the partial (form_group_layout.erb.html) as a layout containing a "yield" statement.
    #
-   # This technique was inspired by:
+   # Technique was inspired by:
    #
    # http://stackoverflow.com/questions/2951105/rails-render-partial-with-block
    # http://stackoverflow.com/questions/2951105/rails-render-partial-with-block/2952056#2952056
    #
    def form_group(f, column, wrapper_class: form_wrapper_class, &block)
-      render layout: "form_group_layout", locals: {f: f, column: column, options: {wrapper_class: wrapper_class}}, &block
+      render layout: "form_group_layout",
+             locals: {f: f, column: column, options: {wrapper_class: wrapper_class}}, &block
+   end
+
+   def form_fileselect_helper(selected_file_selector)
+      # File upload event handler, see: http://www.abeautifulsite.net/whipping-file-inputs-into-shape-with-bootstrap-3
+      # Depends on "fileselect" event, see code in 'application.js'.
+      <<-END
+         <script type="text/javascript">
+            $(document).ready( function() {
+                $('.btn-file :file').on('fileselect', function(event, numFiles, file) {
+                   $('#{selected_file_selector}').text(file);
+                });
+             });
+         </script>
+      END
+   end
+
+   def form_tinymce_helper()
+      <<-END
+         <script type="text/javascript" src="/javascripts/tinymce/tinymce.jquery.min.js"></script>
+
+         <script type="text/javascript">
+         tinymce.init({
+             selector: "textarea",
+             /* TODO: include only the plugins we need here ... */
+             plugins: [
+                 "advlist autolink lists link image charmap print preview anchor",
+                 "searchreplace visualblocks code fullscreen",
+                 "insertdatetime media table contextmenu paste"
+             ],
+             menubar : false,
+             statusbar : false,
+             /*toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image"*/
+             toolbar: "insertfile undo redo | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image"
+         });
+         </script>
+      END
    end
 
    private

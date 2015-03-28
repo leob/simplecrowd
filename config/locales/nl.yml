@@ -56,16 +56,22 @@ nl:
       # use '_html' suffix to suppress HTML escaping - this allows embedding HTML tags if desirable
       slogan_html: Creeer je wereld
       # use '_html' suffix to suppress HTML escaping - this allows embedding HTML tags if desirable
-      subslogan_html: "4just1: gemakkelijk je goede doel financieren"
+      subslogan_html: "4just1: snel en simpel je goede doel financieren"
       project_name_label: Projectnaam
-      project_name_placeholder: Voer uw projectnaam in
-      project_name_tooltip: Hier kunt u uitproberen hoe makkelijk het is om uw project aan te maken. Voer een naam in voor uw project, u kunt later dit altijd nog aanpassen.
+      project_name_placeholder: Voer je projectnaam in
+      project_name_tooltip_html: "Ontdek hoe makkelijk het is om je project aan te maken.<br><br>Voer een naam in voor je project.<br><br><b>Voorbeeld-projectnamen:</b><br> <i>Sponsor mijn borstkanker-loop</i> <br>of<br> <i>Stichting zwerfhonden Roemenie</i><br><br><b>Geen zorgen:</b><br>Je kunt dit later altijd nog aanpassen!"
       project_category_label: Categorie
-      project_category_tooltip: Hier kunt u uitproberen hoe makkelijk het is om uw project aan te maken. Kies een categorie voor uw project, u kunt later dit altijd nog aanpassen.
+      project_category_tooltip_html: "Ontdek hoe makkelijk het is om je project aan te maken.<br><br>Kies een categorie voor je project.<br><br><b>Geen zorgen:</b><br>Je kunt dit later altijd nog aanpassen!"
       project_submit: Beginnen
-      project_submit_tooltip: Ervaar nu hoe u snel en gemakkelijk uw eigen projecten kunt maken. Als u de knop drukt wordt er een proef-versie aangemaakt, niets is nog definitief!
+      project_submit_tooltip_html: "Ontdek hoe makkelijk het is om je project aan te maken!<br><br><b>Geen zorgen:</b><br>Als je de knop drukt wordt er een proef-versie aangemaakt, niets is nog definitief!"
+
     selected_projects:
-      title: Een aantal fantastische projecten
+      title: Enkele fantastische projecten
+  project_block:
+    stats:
+      target: doelbedrag
+      funded: opgehaald
+      days_left: dagen over
   activerecord:
     attributes:
       user:
@@ -76,6 +82,7 @@ nl:
         name: Naam
         summary: Samenvatting
         description: Omschrijving
+        main_image: Afbeelding
   devise:
     confirmations:
       confirmed: 'Uw account is bevestigd.'
@@ -86,7 +93,7 @@ nl:
       unauthenticated: 'U dient in te loggen of u in te schrijven.'
       unconfirmed: 'U dient eerst uw account te bevestigen.'
       locked: 'Uw account is gelocked.'
-      invalid: 'Ongeldig e-mail of wachtwoord.'
+      invalid: 'Ongeldige e-mail of wachtwoord.'
       invalid_token: 'Invalide authenticiteit token.'
       timeout: 'Uw sessie is verlopen, log a.u.b. opnieuw in.'
       inactive: 'Uw account is nog niet geactiveerd.'

@@ -1,0 +1,12 @@
+# Read about fixtures at
+# http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name_nl: MyString
+  name_en: MyString
+  enabled: false
+
+two:
+  name_nl: MyString
+  name_en: MyString
+  enabled: false

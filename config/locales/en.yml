@@ -59,13 +59,18 @@ en:
       subslogan_html: 4just1 makes it easy to fund your good cause
       project_name_label: Project name
       project_name_placeholder: Enter your project name
-      project_name_tooltip: Here you can quickly try out creating a project of your own! Enter a name for your project, you can always change it later.
+      project_name_tooltip_html: "Here you can quickly try out creating a project of your own!<br><br>Enter a name for your project.<br><br><b>Example project names:</b><br> <i>Sponsor my breast cancer run</i> <br>or<br> <i>Stray Dogs Foundation Romania</i><br><br><b>Don't worry:</b><br>you can always change this later!"
       project_category_label: Category
-      project_category_tooltip: Here you can quickly try out creating a project of your own! Select a category for your project, you can always change it later.
+      project_category_tooltip_html: "Here you can quickly try out creating a project of your own!<br><br>Select a category for your project.<br><br><b>Don't worry:</b><br>you can always change this later!"
       project_submit: Try it
-      project_submit_tooltip: Here you can quickly try out creating a project of your own! After clicking the button a 'draft' version is created, nothing is final!
+      project_submit_tooltip_html: "Here you can quickly try out creating a project of your own!<br><br><b>Don't worry:</b><br>After clicking the button only a 'draft' version is created, nothing is final!"
     selected_projects:
       title: Some great projects
+  project_block:
+    stats:
+      target: target
+      funded: funded
+      days_left: days to go
   activerecord:
     attributes:
       user:
@@ -76,4 +81,5 @@ en:
         name: Name
         summary: Summary
         description: Description
+        main_image: Project image
 

@@ -1,13 +1,13 @@
 <%= form_for(@project, role: "form", :html => { :multipart => true }) do |f| %>
     <%= form_errors @project %>
 
-    <%= form_text_field(f, :name, field_options: {autofocus: true, maxlength: 35, size: 35}) %>
+    <%= form_text_field(f, :name, field_options: {autofocus: true, maxlength: 50, size: 50}) %>
     <%= form_text_area(f, :summary, field_options: {rows: 4, maxlength: 250, size: 250}) %>
     <%= form_text_area(f, :description, field_options: {rows: 6}) %>
 
-    <%= form_group(f, :main_image) do %>
+    <%= form_group(f, :image) do %>
         <span class="btn btn-default btn-file">
-            <i class='fa fa-arrow-circle-down'></i> &nbsp; <%= t('forms.general.select_a_file') %> <%= f.file_field :main_image %>
+            <i class='fa fa-arrow-circle-down'></i> &nbsp; <%= t('forms.general.select_a_file') %> <%= f.file_field :image %>
         </span>
 
         &nbsp; <b><%= t('forms.general.selected_file') %></b> <span id="selected-file"> <%= t('forms.general.no_file_selected') %> </span>
@@ -20,17 +20,7 @@
     <%= form_submit_button(f) %>
 <% end %>
 
-<%#
-    File upload control, see: http://www.abeautifulsite.net/whipping-file-inputs-into-shape-with-bootstrap-3
-    Depends on "fileselect" event, see code in 'application.js'.
-%>
 <% content_for :additional_scripts do %>
-    <%# Javascript handler for %>
-    <script type="text/javascript">
-        $(document).ready( function() {
-            $('.btn-file :file').on('fileselect', function(event, numFiles, file) {
-                $('#selected-file').text(file);
-            });
-        });
-    </script>
+    <%== form_fileselect_helper('#selected-file') %>
+    <%== form_tinymce_helper() %>
 <% end %>

@@ -10,20 +10,44 @@ h1, h2, h3 {
 
 // Button paddings - based on settings in Bootswatch Yeti theme
 
+//.btn {
+//  padding: 14px 28px;
+//}
+
 .btn {
-  padding: 14px 28px;
+  //padding: 8px 12px;
+  //padding: 8px 16px;
+  padding: 8px 18px;
 }
+//.btn-primary {
+//  background-color: #008cba;
+//  border-color: #0079a1;
+//  color: #ffffff;
+//}
 
 .btn-lg {
-  padding: 16px 32px;
+  //padding: 16px 32px;
+  padding: 16px 20px;
 }
 
 .btn-sm {
-  padding: 8px 16px;
+  //padding: 8px 16px;
+  padding: 8px 12px;
 }
 
 .btn-xs {
-  padding: 4px 8px;
+  //padding: 4px 8px;
+  padding: 4px 6px;
+}
+
+// override progress bar styling from Yeti to use rounded corners
+.progress {
+  overflow: hidden;
+  height: $line-height-computed;
+  margin-bottom: $line-height-computed;
+  background-color: $progress-bg;
+  border-radius: $border-radius-progress;   //$border-radius-base;
+  @include box-shadow(inset 0 1px 2px rgba(0,0,0,.1));
 }
 
 // Customize tooltips, see: http://www.jeffmould.com/2013/10/30/style-bootstrap-3-0-tooltips/
@@ -38,4 +62,35 @@ h1, h2, h3 {
   color: #000;
   background: #fff;
   border: solid 1px #fff;
+}
+
+// Copied from yeti/_bootswatch.scss
+
+// Tables =====================================================================
+
+table {
+  font-size: $font-size-small;
+}
+
+// Forms ======================================================================
+
+input,
+.form-control {
+  padding: 7px;
+}
+
+label,
+.control-label,
+.help-block,
+.checkbox,
+.radio {
+  font-size: $font-size-small;
+  //font-weight: normal;
+  font-weight: bold;
+}
+
+.input-group-addon,
+.input-group-btn .btn {
+  padding: 8px 14px;
+  font-size: $font-size-small;
 }

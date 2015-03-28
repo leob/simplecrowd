@@ -1,0 +1,121 @@
+//
+// Project presentation styles
+// --------------------------------------------------
+
+$project-block-adjust-height: 15px !default;
+
+.project-block {
+  background-color: white;
+  border: 1px solid #d9d9de;
+  border-radius: 6px;
+  //color: #828587;
+  font-size: 12px;
+  line-height: 1.5;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  position: relative;
+  height: 368px + $project-block-adjust-height;
+  max-width: 225px;
+}
+
+.project-block-thumbnail {
+  height: 165px;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 6px 6px 0 0;
+  background-color: #e1e1e1;
+  text-align: center;
+}
+
+.project-block-image {
+  max-height:162px;
+}
+
+.project-block-content {
+  padding: 10px;
+  height: 150px - $project-block-adjust-height;
+  width: 100%;
+  overflow: hidden;
+}
+
+.project-block-title {
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.project-block-text {
+  position: relative;
+  line-height: 1.25em;
+  // Taken from: http://salzerdesign.com/blog/?p=453 and http://salzerdesign.com/test/fade.html, see comment below.
+  -moz-hyphens: auto;
+  overflow: hidden;
+  word-wrap: break-word;
+}
+
+//
+// Visually "fade out" non-fitting text at the end using a CSS gradient.
+//
+// Taken from: http://salzerdesign.com/blog/?p=453 and http://salzerdesign.com/test/fade.html
+//
+.project-block-text-fade {
+  background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 100%) repeat scroll 0 0 rgba(0, 0, 0, 0);
+  position: absolute;
+  right: 0;
+  bottom: 79px + $project-block-adjust-height;
+  height: 1.25em;
+  width: 100%;
+}
+
+.project-block-footer {
+  position: absolute;
+  bottom: 0px;
+  height: 50px + $project-block-adjust-height;
+  width: 100%;
+  background-color: #e1e1e1;
+  padding: 10px;
+}
+
+.project-block-progress {
+  height: 6px;
+  margin-bottom: 4px;
+}
+
+ul.project-block-stats {
+  list-style: outside none none;
+  padding-left: 0;
+  width: 100%;
+
+  li {
+    display: inline-block;
+
+    &.margin5 {
+      margin-right: 5px;
+    }
+
+    &.margin6 {
+      margin-right: 6px;
+    }
+  }
+}
+
+.project-block-stats-value {
+  font-weight: 700;
+}
+
+// http://stackoverflow.com/questions/19670273/how-to-make-text-on-the-end-fade-out-with-gradient-background
+
+//.text-fade-vertical {
+//  position: relative;
+//  line-height: 1.25em;
+//}
+
+//.text-fade-vertical::after {
+//  background-image: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, #ffffff 80%, #ffffff 100%);
+//  content: "";
+//  height: 100%;
+//  pointer-events: none;
+//  position: absolute;
+//  right: 0;
+//  top: 0;
+//  width: 30%;
+//}

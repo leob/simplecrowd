@@ -11,7 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150226201124) do
+ActiveRecord::Schema.define(version: 20150328145417) do
+
+  create_table "categories", force: :cascade do |t|
+    t.string   "name_nl",    limit: 255
+    t.string   "name_en",    limit: 255
+    t.boolean  "enabled",    limit: 1,   default: true, null: false
+    t.datetime "created_at",                            null: false
+    t.datetime "updated_at",                            null: false
+  end
 
   create_table "friendly_id_slugs", force: :cascade do |t|
     t.string   "slug",           limit: 255, null: false
@@ -48,17 +56,23 @@ ActiveRecord::Schema.define(version: 20150226201124) do
     t.string   "target_amount_currency",    limit: 255,   default: "EUR", null: false
     t.integer  "collected_amount_cents",    limit: 4,     default: 0,     null: false
     t.string   "collected_amount_currency", limit: 255,   default: "EUR", null: false
-    t.boolean  "draft",                     limit: 1
-    t.boolean  "disabled",                  limit: 1
-    t.boolean  "editor_pick",               limit: 1
+    t.boolean  "draft",                     limit: 1,     default: false, null: false
+    t.boolean  "disabled",                  limit: 1,     default: false, null: false
+    t.boolean  "editor_pick",               limit: 1,     default: false, null: false
     t.datetime "created_at",                                              null: false
     t.datetime "updated_at",                                              null: false
-    t.string   "main_image_file_name",      limit: 255
-    t.string   "main_image_content_type",   limit: 255
-    t.integer  "main_image_file_size",      limit: 4
-    t.datetime "main_image_updated_at"
+    t.string   "image_file_name",           limit: 255
+    t.string   "image_content_type",        limit: 255
+    t.integer  "image_file_size",           limit: 4
+    t.datetime "image_updated_at"
+    t.integer  "category_id",               limit: 4
+    t.datetime "start_date"
+    t.datetime "end_date"
+    t.integer  "extended",                  limit: 4,     default: 0,     null: false
+    t.datetime "old_end_date"
   end
 
+  add_index "projects", ["category_id"], name: "index_projects_on_category_id", using: :btree
   add_index "projects", ["user_id"], name: "index_projects_on_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|
@@ -86,5 +100,6 @@ ActiveRecord::Schema.define(version: 20150226201124) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
+  add_foreign_key "projects", "categories"
   add_foreign_key "projects", "users"
 end

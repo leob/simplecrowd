@@ -15,17 +15,18 @@ module NavbarHelper
       end
    end
 
+   CSS_CLASS_PRIMARY = "text-primary navlink-justright"
+   CSS_CLASS_SECONDARY = "navlink-small navlink-justleft"
+
    def user_link(logged_in)
-      css_class_primary = "text-primary navlink-justright"
-      css_class_secondary = "navlink-small navlink-justleft"
 
       content_tag(:li) do
          if logged_in
-            nav_link("my_4just1", nil, class: css_class_primary) +
-               nav_link("sign_out", destroy_user_session_path, data: {method: :delete}, class: css_class_secondary)
+            nav_link("my_4just1", nil, class: CSS_CLASS_PRIMARY) +
+               nav_link("sign_out", destroy_user_session_path, data: {method: :delete}, class: CSS_CLASS_SECONDARY)
          else
-            nav_link("start_project", nil, class: css_class_primary) +
-               nav_link("sign_in", new_user_session_path, class: css_class_secondary)
+            nav_link("start_project", nil, class: CSS_CLASS_PRIMARY) +
+               nav_link("sign_in", new_user_session_path, class: CSS_CLASS_SECONDARY)
          end
       end
    end
