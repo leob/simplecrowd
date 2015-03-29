@@ -4,7 +4,7 @@ class ProjectTest < ModelTest
 
    describe Project, "Demonstration of MiniTest" do
 
-      let(:project_params) { { name: "4just1", summary: "4just1", description: "4just1" } }
+      let(:project_params) { { name: "test1", summary: "test1", description: "test1" } }
       subject { Project.new project_params }
 
       it "is valid with valid params" do

@@ -1,0 +1,18 @@
+<% page_title("Edit Project Id: #{@project.id}") %>
+
+<div class="row">
+  <div class="col-sm-12">
+    <h1>
+      Edit Project
+      <small><%= "#{@project.name} - id: #{@project.id}" %></small>
+    </h1>
+
+    <%= link_to 'Show', [:admin, @project] %> |
+    <%= link_to 'Back', admin_projects_path %>
+
+    <%= render 'form' %>
+
+    <%= link_to 'Show', [:admin, @project] %> |
+    <%= link_to 'Back', admin_projects_path %>
+  </div>
+</div>

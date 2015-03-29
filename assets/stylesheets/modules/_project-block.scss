@@ -33,7 +33,7 @@ $project-block-adjust-height: 15px !default;
 
 .project-block-content {
   padding: 10px;
-  height: 150px - $project-block-adjust-height;
+  height: 146px - $project-block-adjust-height;
   width: 100%;
   overflow: hidden;
 }
@@ -61,8 +61,8 @@ $project-block-adjust-height: 15px !default;
   background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 100%) repeat scroll 0 0 rgba(0, 0, 0, 0);
   position: absolute;
   right: 0;
-  bottom: 79px + $project-block-adjust-height;
-  height: 1.25em;
+  bottom: 83px;
+  height: 1.35em;
   width: 100%;
 }
 

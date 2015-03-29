@@ -6,7 +6,11 @@
         <div class="hero-banner">
 
           <h1 class="big-slogan" data-sr="enter from the top and hustle 50px over 1.5s"><%= t('home.hero_unit.slogan_html') %></h1>
-          <h3 class="small-slogan" data-sr="enter bottom wait 1s"><%= t('home.hero_unit.subslogan_html') %></h3>
+          <%
+             locale = I18n.locale.to_s.upcase
+             subslogan = ENV['APP_SUBSLOGAN_' + locale] || t('home.hero_unit.subslogan_html')
+          %>
+          <h3 class="small-slogan" data-sr="enter bottom wait 1s"><%= subslogan %></h3>
 
           <div class="call-to-action">
             <%= render 'home/hero/new_project_form' %>

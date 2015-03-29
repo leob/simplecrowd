@@ -1,4 +1,4 @@
-class ProjectsController < ApplicationController
+class Admin::ProjectsController < Admin::BaseController
    before_action :set_project, only: [:show, :edit, :update]
 
    before_action :authenticate_user!, only: [:new, :edit, :create, :update]
@@ -9,17 +9,17 @@ class ProjectsController < ApplicationController
    respond_to :html
 
    def index
-      @projects = Project.all
-      respond_with(@projects)
+      @projects = Project.search_and_order(params[:search], params[:page])
+      respond_with(:admin, @projects)
    end
 
    def show
-      respond_with(@project)
+      respond_with(:admin, @project)
    end
 
    def new
       @project = Project.new
-      respond_with(@project)
+      respond_with(:admin, @project)
    end
 
    def edit
@@ -30,12 +30,12 @@ class ProjectsController < ApplicationController
       @project.owner = current_user
 
       @project.save
-      respond_with(@project)
+      respond_with(:admin, @project)
    end
 
    def update
       @project.update(project_params)
-      respond_with(@project)
+      respond_with(:admin, @project)
    end
 
    private
@@ -57,7 +57,8 @@ class ProjectsController < ApplicationController
    end
 
    def project_params
-      params.require(:project).permit(:name, :summary, :description, :target_amount, :collected_amount, :image,
-                                      :editor_pick)
+      params.require(:project).permit(:name, :summary, :description, :image, :editor_pick,
+                                      :target_amount, :target_amount_currency,
+                                      :collected_amount, :collected_amount_currency)
    end
 end

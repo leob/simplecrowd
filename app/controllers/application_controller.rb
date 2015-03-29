@@ -60,7 +60,11 @@ class ApplicationController < ActionController::Base
   # Note: only required for non-default locales because for the default locale we don't prefix the paths with a locale.
   #
   def after_sign_in_path_for(resource_or_scope)
-    path = stored_location_for(resource_or_scope) || signed_in_root_path(resource_or_scope)
+
+    # we send 'admin' users to the admin root path, other users to the stored path (previous location)
+    path = current_user.admin? \
+      ? admin_root_path \
+      : stored_location_for(resource_or_scope) || signed_in_root_path(resource_or_scope)
 
     # If the current locale is not the default locale
     if not I18n.locale.to_sym.eql?(I18n.default_locale.to_sym)

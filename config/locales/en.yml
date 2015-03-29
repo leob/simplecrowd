@@ -46,7 +46,7 @@ en:
     explore_projects: explore
     how_it_works: how it works
     start_project: start a project
-    my_4just1: my 4just1
+    my_info: my info
     sign_in: sign in
     sign_out: sign out
     nl: NL
@@ -56,7 +56,7 @@ en:
       # use '_html' suffix to suppress HTML escaping - this allows embedding HTML tags if desirable
       slogan_html: Create your world
       # use '_html' suffix to suppress HTML escaping - this allows embedding HTML tags if desirable
-      subslogan_html: 4just1 makes it easy to fund your good cause
+      subslogan_html: "we make it easy to fund your good cause"
       project_name_label: Project name
       project_name_placeholder: Enter your project name
       project_name_tooltip_html: "Here you can quickly try out creating a project of your own!<br><br>Enter a name for your project.<br><br><b>Example project names:</b><br> <i>Sponsor my breast cancer run</i> <br>or<br> <i>Stray Dogs Foundation Romania</i><br><br><b>Don't worry:</b><br>you can always change this later!"

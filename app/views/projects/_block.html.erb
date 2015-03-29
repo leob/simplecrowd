@@ -37,7 +37,7 @@
         <span class="project-block-stats-label"><%= t('project_block.stats.funded') %></span>
       </li>
       <li class="margin6">
-        <div class="project-block-stats-value"><%= project.target_amount.format %></div>
+        <div class="project-block-stats-value"><%= project.target_amount.format(no_cents: true) %></div>
         <span class="project-block-stats-label"><%= t('project_block.stats.target') %></span>
       </li>
       <li>

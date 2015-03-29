@@ -2,6 +2,9 @@ class Project < ActiveRecord::Base
    belongs_to :owner, :class_name => 'User', :foreign_key => 'user_id'
    belongs_to :category    #, :class_name => 'Category', :foreign_key => 'category_id'
 
+   # Pagination
+   paginates_per 30
+
    validates :name, presence: true, length: { maximum: 50 }
    validates :summary, presence: true, length: { maximum: 250 }
    validates :description, presence: true
@@ -61,7 +64,7 @@ class Project < ActiveRecord::Base
       ((self.collected_amount * 100) / self.target_amount).to_i
    end
 
-   # SCOPE METHODS
+   # SCOPE, ORDER, PAGING
 
    def self.selected_projects(nr_projects = 12)
       where(editor_pick: true, draft: false, disabled: false)
@@ -76,4 +79,20 @@ class Project < ActiveRecord::Base
    # }
 
    #scope :by_name, -> { order("name ASC") }
+
+   def self.default_order()
+      order(name: :asc)
+   end
+
+   def self.paged(page_number)
+      self.default_order().page page_number
+   end
+
+   def self.search_and_order(search, page_number)
+      if search
+         where("name LIKE ?", "%#{search.downcase}%").default_order().page page_number
+      else
+         self.paged(page_number)
+      end
+   end
 end

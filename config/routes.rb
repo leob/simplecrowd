@@ -40,10 +40,10 @@ Simplecrowd::Application.routes.draw do
 
     resources :users
 
-    get "posts/drafts", to: "posts#drafts", as: "posts_drafts"
-    get "posts/dashboard", to: "posts#dashboard", as: "posts_dashboard"
+    # get "projects/drafts", to: "projects#drafts", as: "projects_drafts"
+    # get "projects/dashboard", to: "projects#dashboard", as: "projects_dashboard"
 
-    resources :posts
+    resources :projects
   end
 
   get "inside", to: "pages#inside", as: "inside"

@@ -147,8 +147,8 @@ class InteractorTest < ActiveSupport::TestCase
 
    describe PlaceOrder, "PlaceOrder" do
 
-      let(:project_params) { {name: "4just1", summary: "4just1", description: "4just1"} }
-      let(:project_params2) { {name: "4just2", summary: "4just2", description: "4just2"} }
+      let(:project_params) { {name: "test1", summary: "test1", description: "test1"} }
+      let(:project_params2) { {name: "test2", summary: "test2", description: "test2"} }
       let(:invalid_project_params) { {description: "bla_and_no_name"} }
 
       let(:mailer) { LowMailer.new }

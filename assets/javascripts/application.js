@@ -26,7 +26,7 @@ $(document).ready( function() {
 //var _gaq = _gaq || [];
 ////_gaq.push(['_setAccount', 'UA-21072494-1']);
 //_gaq.push(['_setAccount', 'UA-XXXX-Y']);    // REPLACE
-//_gaq.push(['_setDomainName', '.4just1.com']);
+//_gaq.push(['_setDomainName', '.domain.com']);
 //_gaq.push(['_trackPageview']);
 //(function() {
 //    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;

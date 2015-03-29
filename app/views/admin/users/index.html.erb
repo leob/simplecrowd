@@ -8,19 +8,19 @@
 </div>
 
 <%= form_tag admin_users_path, method: 'get', html: {role: "form"} do %>
-  <p>
-    <%= text_field_tag :search, params[:search] %>
-    <%= submit_tag "Search", :name => nil, class: "btn btn-sm btn-primary" %>
+  <div class="form-group">
+    <%= text_field_tag :search, params[:search], class: "form-control-inline" %>
+    <%= submit_tag "Search", :name => nil, class: "btn btn-sm btn-primary form-button-inline" %>
     <%= link_to "All", admin_users_path, {class: "btn btn-sm btn-link"} %>
-  </p>
+  </div>
 <% end %>
 
 <table class="table table-striped">
   <tr>
     <th>User ID</th>
+    <th>Email</th>
     <th>Admin</th>
     <th>Locked</th>
-    <th>Email</th>
     <th>Sign In Count</th>
     <th>Created At</th>
     <th>Last Sign In</th>

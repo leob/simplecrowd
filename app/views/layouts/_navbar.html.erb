@@ -9,12 +9,12 @@
       </button>
 
       <%= link_to root_path, class: "navbar-brand" do %>
-          <%= image_tag("logo.png", class: "logo") %>
+          <%= image_tag(ENV['APP_LOGO'] || "simple_crowd.png", class: "logo") %>
       <% end %>
 
       <div class="nav navbar-nav navbar-left navbar-slogan">
         <%= link_to root_path do %>
-            the crowdfunding network
+            <%= ENV['APP_SLOGAN'] || "simple crowdfunding" %>
         <% end %>
       </div>
     </div>

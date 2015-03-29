@@ -1,0 +1,41 @@
+<% page_title("Show Project Id: #{@project.id}") %>
+
+<div class="row">
+  <div class="col-sm-12">
+    <h1>
+      Show Project
+      <small><%= "#{@project.name} - id: #{@project.id}" %></small>
+    </h1>
+
+    <%= link_to 'Edit', edit_admin_project_path(@project) %> |
+    <%= link_to 'Back', admin_projects_path %>
+
+    <p>
+    <h4><b>Name:</b></h4>
+    <%= @project.name %>
+    </p>
+
+    <p>
+    <h4><b>Summary:</b></h4>
+        <%== @project.summary %>
+    </p>
+
+    <p>
+    <h4><b>Main image:</b></h4>
+    <%= image_tag @project.image.url %>
+    </p>
+
+    <p>
+    <h4><b>Settings:</b></h4>
+    <b>Editor pick:</b> <%= @project.editor_pick %>
+    </p>
+
+    <p>
+    <h4><b>Description:</b></h4>
+    <%== @project.description %>
+    </p>
+
+    <%= link_to 'Edit', edit_admin_project_path(@project) %> |
+    <%= link_to 'Back', admin_projects_path %>
+  </div>
+</div>

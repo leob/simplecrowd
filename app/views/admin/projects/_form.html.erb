@@ -1,0 +1,49 @@
+<%= form_for([:admin, @project], role: "form", :html => {multipart: true}) do |f| %>
+    <%= form_submit_button(f) %>
+    <br/>
+
+    <%= form_errors @project %>
+
+    <%= form_text_field(f, :name, field_options: {autofocus: true, maxlength: 50, size: 50}) %>
+
+    <%= form_group(f, :target_amount) do %>
+        <%= f.text_field :target_amount_currency %>
+        <%= f.text_field :target_amount %>
+    <% end %>
+
+    <%= form_group(f, :collected_amount) do %>
+        <%= f.text_field :collected_amount_currency %>
+        <%= f.text_field :collected_amount %>
+    <% end %>
+
+    <%= form_group(f, 'Settings') do %>
+        Editor pick <%= f.check_box :editor_pick %> &nbsp;
+        Draft <%= f.check_box :draft %> &nbsp;
+        Disabled <%= f.check_box :disabled %>
+    <% end %>
+
+    <%= form_text_area(f, :summary, field_options: {rows: 4, maxlength: 250, size: 250}) %>
+
+    <%= form_group(f, :image) do %>
+        <%= image_tag @project.image.url %>
+        <br/>
+        <br/>
+
+        <div>
+            <span class="btn btn-default btn-file">
+                <i class='fa fa-arrow-circle-down'></i> &nbsp; <%= t('forms.general.select_a_file') %> <%= f.file_field :image %>
+            </span>
+
+            &nbsp; <b><%= t('forms.general.selected_file') %></b> <span id="selected-file"> <%= t('forms.general.no_file_selected') %> </span>
+        </div>
+    <% end %>
+
+    <%= form_text_area(f, :description, field_options: {rows: 6}) %>
+
+    <%= form_submit_button(f) %>
+<% end %>
+
+<% content_for :additional_scripts do %>
+    <%== form_fileselect_helper('#selected-file') %>
+    <%== form_tinymce_helper() %>
+<% end %>

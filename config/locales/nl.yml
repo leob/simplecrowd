@@ -46,7 +46,7 @@ nl:
     explore_projects: ontdek
     how_it_works: hoe werkt het
     start_project: start een project
-    my_4just1: mijn 4just1
+    my_info: mijn info
     sign_in: inloggen
     sign_out: uitloggen
     nl: NL
@@ -56,7 +56,7 @@ nl:
       # use '_html' suffix to suppress HTML escaping - this allows embedding HTML tags if desirable
       slogan_html: Creeer je wereld
       # use '_html' suffix to suppress HTML escaping - this allows embedding HTML tags if desirable
-      subslogan_html: "4just1: snel en simpel je goede doel financieren"
+      subslogan_html: "snel en simpel je goede doel financieren"
       project_name_label: Projectnaam
       project_name_placeholder: Voer je projectnaam in
       project_name_tooltip_html: "Ontdek hoe makkelijk het is om je project aan te maken.<br><br>Voer een naam in voor je project.<br><br><b>Voorbeeld-projectnamen:</b><br> <i>Sponsor mijn borstkanker-loop</i> <br>of<br> <i>Stichting zwerfhonden Roemenie</i><br><br><b>Geen zorgen:</b><br>Je kunt dit later altijd nog aanpassen!"

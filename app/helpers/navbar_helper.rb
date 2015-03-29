@@ -21,13 +21,14 @@ module NavbarHelper
    def user_link(logged_in)
 
       content_tag(:li) do
-         if logged_in
-            nav_link("my_4just1", nil, class: CSS_CLASS_PRIMARY) +
-               nav_link("sign_out", destroy_user_session_path, data: {method: :delete}, class: CSS_CLASS_SECONDARY)
-         else
-            nav_link("start_project", nil, class: CSS_CLASS_PRIMARY) +
-               nav_link("sign_in", new_user_session_path, class: CSS_CLASS_SECONDARY)
-         end
+         nav_link("start_project", nil, class: CSS_CLASS_PRIMARY) +
+            if logged_in
+               #nav_link("my_info", nil, class: CSS_CLASS_PRIMARY) +
+                  nav_link("sign_out", destroy_user_session_path, data: {method: :delete}, class: CSS_CLASS_SECONDARY)
+            else
+
+                  nav_link("sign_in", new_user_session_path, class: CSS_CLASS_SECONDARY)
+            end
       end
    end
 
