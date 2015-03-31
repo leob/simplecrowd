@@ -57,7 +57,7 @@ class Admin::ProjectsController < Admin::BaseController
    end
 
    def project_params
-      params.require(:project).permit(:name, :summary, :description, :image, :editor_pick,
+      params.require(:project).permit(:name, :category_id, :summary, :description, :image, :editor_pick,
                                       :target_amount, :target_amount_currency,
                                       :collected_amount, :collected_amount_currency)
    end

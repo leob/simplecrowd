@@ -6,6 +6,7 @@ class Project < ActiveRecord::Base
    paginates_per 30
 
    validates :name, presence: true, length: { maximum: 50 }
+   validates :category, presence: true
    validates :summary, presence: true, length: { maximum: 250 }
    validates :description, presence: true
 
