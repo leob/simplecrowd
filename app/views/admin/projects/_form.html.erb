@@ -6,6 +6,10 @@
 
     <%= form_text_field(f, :name, field_options: {autofocus: true, maxlength: 50, size: 50}) %>
 
+    <%= form_group(f, :category) do %>
+        <%= f.collection_select :category_id, Category.all, :id, :name_en, prompt: "-- Please select --" %>
+    <% end %>
+
     <%= form_group(f, :target_amount) do %>
         <%= f.text_field :target_amount_currency %>
         <%= f.text_field :target_amount %>
