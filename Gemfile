@@ -40,6 +40,11 @@ group :production do
   gem 'unicorn'
 end
 
+# Paperclip image storage on Amazon S3
+group :production do
+  gem 'aws-sdk', '~> 1.5.7'
+end
+
 gem 'spring', group: :development
 
 group :development, :test do
