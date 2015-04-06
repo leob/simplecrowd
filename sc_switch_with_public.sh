@@ -17,7 +17,7 @@ then
 
     echo "DON'T FORGET TO DO: 'git merge --no-commit master' !!"
 
-    echo After that you can do: 'gc -m "updated public folder for heroku:"'
+    echo After that you can do: 'gc -m "updated public folder for heroku"'
     echo and: 'git push heroku with_public:master'
 
     echo "WHEN FINISHED DON'T FORGET TO INVOKE: 'sc_switch_master.sh' !!"
