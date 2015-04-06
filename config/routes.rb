@@ -1,5 +1,6 @@
 Simplecrowd::Application.routes.draw do
   root 'home#index'
+
   #get '/:locale' => 'home#index'
 
   #
@@ -46,8 +47,15 @@ Simplecrowd::Application.routes.draw do
     resources :projects
   end
 
+  # 'Pages'
+
   get "inside", to: "pages#inside", as: "inside"
   get "signed_off", to: "pages#signed_off", as: "signed_off"
+
+  get "/how_it_works", to: "pages#how_it_works", as: "how_it_works"
+  get "/about_us", to: "pages#about_us", as: "about_us"
+  get "/contact", to: "pages#contact", as: "contact"
+  post "/emailconfirmation", to: "pages#email", as: "email_confirmation"
 
   if Rails.env.development?
      # catch-all, for easy testing of arbitrary views without having to add routes (or controller mappings) for them

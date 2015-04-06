@@ -1,7 +1,6 @@
 <% page_title("Edit User Id: #{@user.id}") %>
 
-<div class="row">
-  <div class="col-sm-6">
+<%= form_wrapper do %>
     <h1>
       Edit User <small><%= "#{@user.email} - id: #{@user.id}" %></small>
     </h1>
@@ -71,5 +70,4 @@
                 class: "btn btn-small btn-danger" %>
     <% end %>
 
-  </div>
-</div>
+<% end %>

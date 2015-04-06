@@ -29,7 +29,9 @@ end
       render :contact
     else    
       ContactMailer.contact_message(@name,@email,@message).deliver
-      redirect_to root_path, notice: "Your message was sent. Thank you."
+      #redirect_to root_path, notice: "Your message was sent. Thank you."
+      flash[:notice] = "Your message was sent. Thank you."
+      render :contact
     end
   end
   

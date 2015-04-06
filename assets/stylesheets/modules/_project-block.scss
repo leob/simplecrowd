@@ -101,21 +101,3 @@ ul.project-block-stats {
 .project-block-stats-value {
   font-weight: 700;
 }
-
-// http://stackoverflow.com/questions/19670273/how-to-make-text-on-the-end-fade-out-with-gradient-background
-
-//.text-fade-vertical {
-//  position: relative;
-//  line-height: 1.25em;
-//}
-
-//.text-fade-vertical::after {
-//  background-image: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, #ffffff 80%, #ffffff 100%);
-//  content: "";
-//  height: 100%;
-//  pointer-events: none;
-//  position: absolute;
-//  right: 0;
-//  top: 0;
-//  width: 30%;
-//}

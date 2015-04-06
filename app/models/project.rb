@@ -27,6 +27,14 @@ class Project < ActiveRecord::Base
                         :size => {in: 0..8.megabytes,
                                   message: ': ' + I18n.t('forms.errors.invalid_file_size', size_mb: 8)}
 
+   validate :check_currencies
+
+   def check_currencies
+      if target_amount.currency != collected_amount.currency
+         errors[:base] << I18n.t('forms.projects.errors.not_the_same_currency')
+      end
+   end
+
    after_validation :clean_paperclip_errors
 
    #
@@ -67,13 +75,16 @@ class Project < ActiveRecord::Base
 
    # SCOPE, ORDER, PAGING
 
+   #
+   # Instead of the Rails "scope" macro we just use class methods. Exactly the same functionality but more flexible.
+   #
+
    def self.selected_projects(nr_projects = 12)
       where(editor_pick: true, draft: false, disabled: false)
           .order(created_at: :desc)
           .limit(nr_projects)
    end
 
-   # # Scopes
    # scope :editor_picks, -> {
    #                       where(editor_pick: true)
    #                           .order("updated_at DESC")

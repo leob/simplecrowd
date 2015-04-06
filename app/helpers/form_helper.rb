@@ -67,6 +67,10 @@ module FormHelper
              locals: {f: f, column: column, options: {wrapper_class: wrapper_class}}, &block
    end
 
+   def form_wrapper(&block)
+      render layout: "form_wrapper_layout", &block
+   end
+
    def form_fileselect_helper(selected_file_selector)
       # File upload event handler, see: http://www.abeautifulsite.net/whipping-file-inputs-into-shape-with-bootstrap-3
       # Depends on "fileselect" event, see code in 'application.js'.
