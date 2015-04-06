@@ -19,7 +19,7 @@
 
 // small font navigation link
 .navlink-small {
-  color: $brand-inverse;
+  //color: $brand-inverse;
 }
 
 // right-justified navigation link (uses less right-padding)
@@ -153,4 +153,70 @@
 // apply the mixins to the CSS class
 .navbar.navbar-shrink {
   @include navbar-shrinked();
+}
+
+// COPIED/MODIFIED FROM Bootstrap-SASS "_dropdowns.scss"
+@media (min-width: $grid-float-breakpoint) {
+  .navbar-right {
+    .dropdown-menu {
+      //right: 0; left: auto;
+      left: 0; right: auto;
+    }
+    // Necessary for overrides of the default right aligned menu.
+    // Will remove come v4 in all likelihood.
+    .dropdown-menu-left {
+      left: 0; right: auto;
+    }
+  }
+}
+
+// DROPDOWN MENUS
+
+.navbar .navbar-nav .dropdown.open li a {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.navbar.navbar-shrink .navbar-nav .dropdown.open li a {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.navbar-default {
+
+  .dropdown-menu {
+    background-color: $navbar-expanded-background;
+
+    > li > a {
+      color: $navbar-default-color;
+    }
+
+    > li > a:hover,
+    > li > a:focus
+    > .active > a,
+    > .active > a:hover {
+      //background-color: $navbar-expanded-background;
+      background: none repeat scroll 0 0 transparent;
+      color: $brand-primary;
+    }
+  }
+}
+
+// override color/background for navbar-li and navbar-li-open (dropdown opened) for states hover/focus/active
+.navbar-default .navbar-nav {
+
+  > li > a:hover, > li > a:focus, > li > a:active, > .open > a:hover, > .open > a:focus, > .open > a:active {
+    // override Bootstrap hover/focus background with "none transparent"
+    //(meaning: don't change the background when hovering)
+    background: none repeat scroll 0 0 transparent;
+    color: $brand-primary;
+  }
+}
+
+.navbar-nav > li > .dropdown-menu {
+  margin-top: 8px;
+}
+
+.navbar.navbar-shrink .navbar-nav > li > .dropdown-menu {
+  margin-top: 4px;
 }

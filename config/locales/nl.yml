@@ -39,16 +39,28 @@ nl:
       submit: Opslaan
     projects:
       title: Projecten
+      errors:
+        not_the_same_currency: Doelbedrag en Opgehaald bedrag moeten in dezelfde valuta zijn
   pages:
     signed_off:
       title: U bent nu uitgelogd
+    how_it_works:
+      title: Hoe werkt het?
+    about_us:
+      title: Over ons
   navbar:
-    explore_projects: ontdek
+    projects: projecten
+    search_projects: zoek projecten
+    create_project: maak een nieuw project
     how_it_works: hoe werkt het
+    about_us: over ons
+    contact: contact opnemen
     start_project: start een project
-    my_info: mijn info
     sign_in: inloggen
     sign_out: uitloggen
+    user_projects: mijn projecten
+    user_settings: mijn instellingen
+    admin_dashboard: admin dashboard
     nl: NL
     en: EN
   home:

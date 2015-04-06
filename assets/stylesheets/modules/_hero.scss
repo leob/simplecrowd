@@ -66,19 +66,15 @@ $call-to-action-font-size-small: 13px;
 }
 
 .call-to-action {
-  // .toffset4:
   margin-top: 20px;
 
-  //"learn more" link:
   a {
     font-size: $call-to-action-font-size;
   }
 
   @media (max-width: $screen-xs-max) {
-    // .toffset2:
     margin-top: 10px;
 
-    //"learn more" link:
     a {
       font-size: $call-to-action-font-size-small;
     }
@@ -87,11 +83,9 @@ $call-to-action-font-size-small: 13px;
 
 .call-to-action-btn {
   @extend .btn;
-  //@extend .btn-primary;
   @include button-variant($btn-action-color, $btn-action-bg, $btn-action-border);
   @extend .roffset3;
   // call mixin for .btn-lg style
-  //@include button-size($padding-large-vertical, $padding-large-horizontal, $font-size-large, $line-height-large, $border-radius-large);
   @include button-size($padding-small-vertical, $padding-small-horizontal, $call-to-action-font-size, $line-height-small, $border-radius-small);
   // increase width
   width: 160px;
@@ -100,7 +94,7 @@ $call-to-action-font-size-small: 13px;
   transition: all 0.6s ease 0.5s;
 
   &:hover {
-    background: darker(darkorange);
+    background: #fd6703;
   }
 
   @media (max-width: $screen-sm-max) {

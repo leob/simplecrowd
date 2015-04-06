@@ -1,10 +1,5 @@
 module ApplicationHelper
 
-   # def title(value)
-   #   # the reason for the "#{value}" construct is to apply HTML-escaping
-   #   @title = "#{value}" if value
-   # end
-
    def page_title(key_or_value)
       @title = I18n.t(key_or_value, default: key_or_value) if key_or_value
    end
@@ -12,10 +7,6 @@ module ApplicationHelper
    def current_locale
       I18n.locale.to_s
    end
-
-   # def user_signed_in?
-   #   false
-   # end
 
    # def like_button(width = 70, show_faces = false)
    #   raw "<div class=\"fb-like\" data-send=\"false\" data-width=\"#{width}\" data-layout=\"box_count\" data-show-faces=\"true\"></div>"

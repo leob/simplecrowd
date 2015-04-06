@@ -12,10 +12,15 @@ class User < ActiveRecord::Base
    paginates_per 30
 
    # Validations
+
    # :email
    validates_format_of :email, with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i
 
    # SCOPE, ORDER, PAGING
+
+   #
+   # Instead of the Rails "scope" macro we just use class methods. Exactly the same functionality but more flexible.
+   #
 
    def self.paged(page_number)
       order(admin: :desc, email: :asc).page page_number

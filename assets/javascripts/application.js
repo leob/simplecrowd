@@ -15,6 +15,10 @@ $(document).ready( function() {
 
         input.trigger('fileselect', [numFiles, file]);
     });
+
+    enquire.register("screen and (min-width:768px)", function() {
+        $('.dropdown-toggle').dropdownHover();
+    });
 });
 
 ////////////////////// NOT CURRENTLY USED //////////////////////

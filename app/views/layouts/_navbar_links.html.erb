@@ -1,9 +1,44 @@
-<%= nav("explore_projects", nil) %>
-<%= nav("how_it_works", nil) %>
+<li class="dropdown">
+  <a href="#" data-toggle="dropdown" class="dropdown-toggle "><%= t("navbar.projects") %></a>
 
-<%=
-    user_link(user_signed_in?)
-%>
+  <ul class="dropdown-menu">
+    <li><%= nav_link("search_projects", nil) %></li>
+    <li><%= nav_link("create_project", nil) %></li>
+  </ul>
+</li>
+
+<li class="dropdown">
+  <a href="#" data-toggle="dropdown" class="dropdown-toggle "><%= t("navbar.how_it_works") %></a>
+
+  <ul class="dropdown-menu">
+    <li><%= nav_link("how_it_works", how_it_works_path) %></li>
+    <li><%= nav_link("about_us", about_us_path) %></li>
+    <li><%= nav_link("contact", contact_path) %></li>
+  </ul>
+</li>
+
+<% if user_signed_in? %>
+
+    <li class="dropdown">
+      <a href="#" data-toggle="dropdown" class="dropdown-toggle navlink-small"><%= current_user.email %></a>
+
+      <ul class="dropdown-menu">
+        <li><%= nav_link("user_projects", nil) %></li>
+        <li><%= nav_link("user_settings", nil) %></li>
+<% if current_user.admin? %>
+        <li><%= nav_link("admin_dashboard", admin_root_path) %></li>
+<% end %>
+        <li><%= nav_link("sign_out", destroy_user_session_path, data: {method: :delete}) %></li>
+      </ul>
+    </li>
+
+<% else %>
+
+    <li>
+      <%= nav_link("sign_in", new_user_session_path, class: "navlink-small") %>
+    </li>
+
+<% end %>
 
 <%=
     content_tag(:li) do

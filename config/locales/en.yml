@@ -39,16 +39,28 @@ en:
       submit: Update
     projects:
       title: Projects
+      errors:
+        not_the_same_currency: Target amount and Collected amount should have the same currency
   pages:
     signed_off:
       title: You are signed off now
+    how_it_works:
+      title: How it works
+    about_us:
+      title: About us
   navbar:
-    explore_projects: explore
+    projects: projects
+    search_projects: search projects
+    create_project: create a new project
     how_it_works: how it works
+    about_us: about us
+    contact: contact us
     start_project: start a project
-    my_info: my info
     sign_in: sign in
     sign_out: sign out
+    user_projects: my projects
+    user_settings: my settings
+    admin_dashboard: admin dashboard
     nl: NL
     en: EN
   home:

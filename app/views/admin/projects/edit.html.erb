@@ -1,7 +1,6 @@
 <% page_title("Edit Project Id: #{@project.id}") %>
 
-<div class="row">
-  <div class="col-sm-12">
+<%= form_wrapper do %>
     <h1>
       Edit Project
       <small><%= "#{@project.name} - id: #{@project.id}" %></small>
@@ -15,4 +14,4 @@
     <%= link_to 'Show', [:admin, @project] %> |
     <%= link_to 'Back', admin_projects_path %>
   </div>
-</div>
+<% end %>

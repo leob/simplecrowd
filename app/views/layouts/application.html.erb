@@ -2,17 +2,31 @@
 <html>
 <head>
   <meta charset="utf-8">
+  <%# don't use minimum/maximum-scale, bad for accessibility, see: http://a11yproject.com/posts/never-use-maximum-scale
   <%#meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no"%>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <!--meta name="description" content="Simple demo crowdfunding website" <meta name="author" content="leob"> <meta name="keywords" content="crowdfunding"-->
-
+  <%# <!-- meta tags -->
+    <meta name="description" content="Simple demo crowdfunding website">
+    <meta name="author" content="leob">
+    <meta name="keywords" content="crowdfunding">
+  %>
   <title><%= @title || "Home" %> - <%= ENV['APP_BRAND'] || "simplecrowd" %>.com</title>
 
   <%= favicon_link_tag 'favicon.ico' %>
   <%= favicon_link_tag 'apple-touch-icon.png', rel: 'apple-touch-icon', type: 'image/png' %>
   <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => false %>
 
+  <%#
+      Prevent "FOUC" (Flash of Unstyled Content) that you sometimes see under Firefox due to loading of remote fonts
+      (Google fonts etc), this is more visible under e.g. Heroku (higher latency) than when deployed locally.
+
+      See: https://www.typotheque.com/webfonts/FOUC
+
+      Solution is to use the Web Font Preloader, see below.
+
+      MAKE SURE TO SPECIFY THE CORRECT FONT FAMILIES IN THE 'families' PARAMETER BELOW !
+  %>
   <script src="//ajax.googleapis.com/ajax/libs/webfont/1.5.10/webfont.js"></script>
   <script>
       WebFont.load({
@@ -33,11 +47,13 @@
 <body data-no-turbolink>
 
 <div id="wrap">
-  <header>
+  <%# 'banner' is for ARIA see: https://dequeuniversity.com/assets/html/jquery-summit/html5/slides/landmarks.html %>
+  <header role="banner">
     <%= render 'layouts/navbar' %>
   </header>
 
-  <div class="container-fluid">
+  <%# 'main' is for ARIA see: https://dequeuniversity.com/assets/html/jquery-summit/html5/slides/landmarks.html %>
+  <div class="container-fluid" role="main">
 
     <% if content_for?(:wide_content) %>
         <%= yield :wide_content %>
