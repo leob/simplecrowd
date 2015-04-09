@@ -3,17 +3,6 @@
   <div class="content-row content-row-smaller">
     <div class="content-col">
 
-      <div class="container-relative">
-        <h3 class="text-center"><%= t('home.selected_projects.title') %></h3>
-
-        <%# hide the 'more' button on smaller devices because there is not enough room %>
-        <div class="container-align-right hidden-sm hidden-xs">
-          <a class="btn-more" href="<%= projects_url %>">
-            <%= t('home.selected_projects.more_button') %> &nbsp;<i class="fa fa-arrow-circle-right"></i>
-          </a>
-        </div>
-      </div>
-
       <% @selected_projects.each_slice(4) do |row| %>
           <div class="row">
 

@@ -1,7 +1,7 @@
 Simplecrowd::Application.routes.draw do
   root 'home#index'
 
-  #get '/:locale' => 'home#index'
+  get "/projects", to: "projects#index", as: "projects"
 
   #
   # Use the 'routing-filter' gem to do its magic with locale-based routes. The default locale doesn't need a special
@@ -29,20 +29,10 @@ Simplecrowd::Application.routes.draw do
 
   devise_for :users
 
-  resources :projects, except: :destroy
-
-  #========================================================================================
-  # THE ROUTE CONFIGURATIONS BELOW SHOULD GO AWAY AT SOME POINT !
-  #
-  # ** BEGIN ** TO BE REMOVED
-  #----------------------------------------------------------------------------------------
   namespace :admin do
     root "base#index"
 
     resources :users
-
-    # get "projects/drafts", to: "projects#drafts", as: "projects_drafts"
-    # get "projects/dashboard", to: "projects#dashboard", as: "projects_dashboard"
 
     resources :projects
   end
@@ -56,7 +46,13 @@ Simplecrowd::Application.routes.draw do
   get "/about_us", to: "pages#about_us", as: "about_us"
   get "/contact", to: "pages#contact", as: "contact"
   post "/emailconfirmation", to: "pages#email", as: "email_confirmation"
+  get "/sitemap", to: "pages#sitemap", as: "sitemap"
 
+  #========================================================================================
+  # THE ROUTE CONFIGURATIONS BELOW SHOULD GO AWAY AT SOME POINT !
+  #
+  # ** BEGIN ** TO BE REMOVED
+  #----------------------------------------------------------------------------------------
   if Rails.env.development?
      # catch-all, for easy testing of arbitrary views without having to add routes (or controller mappings) for them
      get ':controller(/:action(/:id(.:format)))'
@@ -64,14 +60,7 @@ Simplecrowd::Application.routes.draw do
   #   # /assets is symlinked into public/assets, this construct is used for SASS source maps (with FF/Chrome dev tools)
   #   get "/assets" => redirect("http://localhost:3002/public/assets")
   end
-
-  #get "home", to: "pages#home", as: "home"
-  #get "/contact", to: "pages#contact", as: "contact"
-  #post "/emailconfirmation", to: "pages#email", as: "email_confirmation"
-  #get "posts", to: "pages#posts", as: "posts"
-  #get "posts/:id", to: "pages#show_post", as: "post"
   #----------------------------------------------------------------------------------------
   # ** END ** TO BE REMOVED
   #========================================================================================
-
 end

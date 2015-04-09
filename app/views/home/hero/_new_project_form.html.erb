@@ -14,18 +14,9 @@
     <div class="form-group hidden-xs">
       <%= label_tag(:category, t('home.hero_unit.project_category_label'), class: "sr-only") %>
       <%= select_tag(:category,
-                     options_for_select(
-                             [
-                                     ["Animals", "animals"],
-                                     ["Business", "business"],
-                                     ["Community", "community"],
-                                     ["Medical", "medical"],
-                                     ["Personal", "personal"],
-                                     ["Sports", "sports"],
-                                     ["Third World", "third-world"],
-                                     ["-other/choose later-", "other"]
-                             ]
-                     ), class: "form-control", prompt: "-select category-",
+                     options_from_collection_for_select(@categories, :id, :name),
+                     class: "form-control",
+                     prompt: t('home.hero_unit.project_category_select'),
                      data: {toggle: "tooltip", placement: "bottom", delay: "500", html: "true"},
                      title: t('home.hero_unit.project_category_tooltip_html')
           ) %>
@@ -38,3 +29,15 @@
         <%= t('home.hero_unit.project_submit') %>&nbsp;&nbsp;&nbsp;<i class="fa fa-arrow-circle-right"></i>
     </button>
 <% end %>
+<!--# options_for_select(-->
+<!--#         [-->
+<!--#                 ["Animals", "animals"],-->
+<!--#                 ["Business", "business"],-->
+<!--#                 ["Community", "community"],-->
+<!--#                 ["Medical", "medical"],-->
+<!--#                 ["Personal", "personal"],-->
+<!--#                 ["Sports", "sports"],-->
+<!--#                 ["Third World", "third-world"],-->
+<!--#                 ["-other/choose later-", "other"]-->
+<!--#         ]-->
+<!--# )-->

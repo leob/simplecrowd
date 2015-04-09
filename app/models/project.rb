@@ -100,11 +100,25 @@ class Project < ActiveRecord::Base
       self.default_order().page page_number
    end
 
-   def self.search_and_order(search, page_number)
+   def self.search_paged(search, page_number)
       if search
          where("name LIKE ?", "%#{search.downcase}%").default_order().page page_number
       else
          self.paged(page_number)
       end
+   end
+
+   def self.search_and_order(name, category, order_by)
+      query = all
+
+      if not name.blank?
+         query = query.where("name LIKE ?", "%#{name.downcase}%")
+      end
+
+      if not category.blank?
+          query = query.where(:category => category)
+      end
+
+      query.order(created_at: :desc)
    end
 end

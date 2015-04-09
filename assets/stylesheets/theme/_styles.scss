@@ -40,6 +40,12 @@ h1, h2, h3 {
   padding: 4px 6px;
 }
 
+.btn-more {
+  @extend .btn;
+  @extend .btn-success;
+  padding: 8px 38px;
+}
+
 // override progress bar styling from Yeti to use rounded corners
 .progress {
   overflow: hidden;
