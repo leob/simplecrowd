@@ -1,5 +1,6 @@
 class Admin::ProjectsController < Admin::BaseController
    before_action :set_project, only: [:show, :edit, :update]
+   before_action :set_categories, only: [:new, :edit]
 
    before_action :authenticate_user!, only: [:new, :edit, :create, :update]
    before_action :require_project_owner!, only: [:edit, :update]
@@ -9,7 +10,7 @@ class Admin::ProjectsController < Admin::BaseController
    respond_to :html
 
    def index
-      @projects = Project.search_and_order(params[:search], params[:page])
+      @projects = Project.search_paged(params[:search], params[:page])
       respond_with(:admin, @projects)
    end
 
@@ -54,6 +55,10 @@ class Admin::ProjectsController < Admin::BaseController
 
    def set_project
       @project = Project.find(params[:id])
+   end
+
+   def set_categories
+      @categories = Category.active_categories(I18n.locale.to_s.downcase)
    end
 
    def project_params

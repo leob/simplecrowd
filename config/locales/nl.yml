@@ -42,12 +42,16 @@ nl:
       errors:
         not_the_same_currency: Doelbedrag en Opgehaald bedrag moeten in dezelfde valuta zijn
   pages:
+    projects:
+      title: Projecten
     signed_off:
       title: U bent nu uitgelogd
     how_it_works:
       title: Hoe werkt het?
     about_us:
       title: Over ons
+    sitemap:
+      title: Sitemap
   navbar:
     projects: projecten
     search_projects: zoek projecten
@@ -55,6 +59,7 @@ nl:
     how_it_works: hoe werkt het
     about_us: over ons
     contact: contact opnemen
+    sitemap: sitemap
     start_project: start een project
     sign_in: inloggen
     sign_out: uitloggen
@@ -74,11 +79,24 @@ nl:
       project_name_tooltip_html: "Ontdek hoe makkelijk het is om je project aan te maken.<br><br>Voer een naam in voor je project.<br><br><b>Voorbeeld-projectnamen:</b><br> <i>Sponsor mijn borstkanker-loop</i> <br>of<br> <i>Stichting zwerfhonden Roemenie</i><br><br><b>Geen zorgen:</b><br>Je kunt dit later altijd nog aanpassen!"
       project_category_label: Categorie
       project_category_tooltip_html: "Ontdek hoe makkelijk het is om je project aan te maken.<br><br>Kies een categorie voor je project.<br><br><b>Geen zorgen:</b><br>Je kunt dit later altijd nog aanpassen!"
+      project_category_select: "-selecteer categorie-"
       project_submit: Beginnen
       project_submit_tooltip_html: "Ontdek hoe makkelijk het is om je project aan te maken!<br><br><b>Geen zorgen:</b><br>Als je de knop drukt wordt er een proef-versie aangemaakt, niets is nog definitief!"
-
     selected_projects:
       title: Enkele fantastische projecten
+      more_button: meer
+  projects:
+    search_form:
+      title: Zoek projecten
+      name_label: Zoek op
+      name_placeholder: voer (deel) projectnaam in
+      category_label: in categorie
+      category_select: "-in alle categorieen-"
+      order_by_label: sorteer op
+      order_by_created_at_desc: "nieuwste bovenaan"
+      order_by_perc_completed_desc: "hoogste % behaald"
+      order_by_perc_completed_asc: "laagste % behaald"
+      submit: Zoek
   project_block:
     stats:
       target: doelbedrag

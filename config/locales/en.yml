@@ -42,12 +42,16 @@ en:
       errors:
         not_the_same_currency: Target amount and Collected amount should have the same currency
   pages:
+    projects:
+      title: Projects
     signed_off:
       title: You are signed off now
     how_it_works:
       title: How it works
     about_us:
       title: About us
+    sitemap:
+      title: Sitemap
   navbar:
     projects: projects
     search_projects: search projects
@@ -55,6 +59,7 @@ en:
     how_it_works: how it works
     about_us: about us
     contact: contact us
+    sitemap: sitemap
     start_project: start a project
     sign_in: sign in
     sign_out: sign out
@@ -74,10 +79,24 @@ en:
       project_name_tooltip_html: "Here you can quickly try out creating a project of your own!<br><br>Enter a name for your project.<br><br><b>Example project names:</b><br> <i>Sponsor my breast cancer run</i> <br>or<br> <i>Stray Dogs Foundation Romania</i><br><br><b>Don't worry:</b><br>you can always change this later!"
       project_category_label: Category
       project_category_tooltip_html: "Here you can quickly try out creating a project of your own!<br><br>Select a category for your project.<br><br><b>Don't worry:</b><br>you can always change this later!"
+      project_category_select: "-select category-"
       project_submit: Try it
       project_submit_tooltip_html: "Here you can quickly try out creating a project of your own!<br><br><b>Don't worry:</b><br>After clicking the button only a 'draft' version is created, nothing is final!"
     selected_projects:
       title: Some great projects
+      more_button: more
+  projects:
+    search_form:
+      title: Search projects
+      name_label: Search for
+      name_placeholder: type (part of) the project name
+      category_label: in category
+      category_select: "-in all categories-"
+      order_by_label: sort by
+      order_by_created_at_desc: "newest first"
+      order_by_perc_completed_desc: "highest % funded first"
+      order_by_perc_completed_asc: "lowest % funded first"
+      submit: Search
   project_block:
     stats:
       target: target

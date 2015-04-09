@@ -19,6 +19,44 @@ html,body {
   padding-bottom: 120px;
 }
 
+// utility styles
+
+.margin-top {
+  margin-top: 15px;
+}
+
+.margin-bottom {
+  margin-bottom: 15px;
+}
+
+.margin-left {
+  margin-left: 15px;
+}
+
+.margin-right {
+  margin-right: 15px;
+}
+
+.margin-top {
+  margin-top: 15px;
+}
+
+// containers with absolute/relative positioning
+
+.container-relative {
+  position: relative;
+}
+
+.container-absolute {
+  position: absolute;
+}
+
+.container-align-right {
+  position: absolute;
+  right: 12px;
+  bottom: -5px;
+}
+
 // Semantic styles for Bootstrap grid based elements (containers, rows, columns)
 
 // This is meant for a "wide" row (occupying the full width of the screen); should be used as child of container-fluid;
@@ -55,10 +93,10 @@ html,body {
   @include make-sm-column(12,0);
 }
 
-.content-separator {
-  border-bottom: 1px solid lightgrey;
-  padding-bottom: 20px;
-}
+//.content-separator {
+//  border-bottom: 1px solid lightgrey;
+//  padding-bottom: 20px;
+//}
 
 //.col-padding-extra {
 //  padding-left: 8px;

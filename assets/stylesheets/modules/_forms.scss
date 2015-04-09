@@ -2,6 +2,12 @@
 // Form styles
 // --------------------------------------------------
 
+.form-panel {
+  width: 100%;
+  padding: 15px;
+  background-color: #e1e1e1;
+}
+
 .form-control-inline {
   @extend .form-control;
   min-width: 0;

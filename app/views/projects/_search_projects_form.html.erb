@@ -1,0 +1,46 @@
+<div class="content-container" role="region">
+  <div class="content-row content-row-smaller">
+    <div class="content-col">
+
+      <h3 class="text-center"><%= t('projects.search_form.title') %></h3>
+
+      <div class="form-panel margin-top margin-bottom">
+        <%= form_tag(projects_path, method: 'get', class: "form-inline", role: "form") do %>
+
+            <div class="form-group margin-right">
+              <%= label_tag(:name, t('projects.search_form.name_label'), class: "h6") %>
+              <%=
+                  search_field_tag(:name, params[:name], class: "form-control",
+                                   placeholder: t('projects.search_form.name_placeholder'))
+              %>
+            </div>
+
+            <div class="form-group margin-right">
+              <%= label_tag(:category, t('projects.search_form.category_label'), class: "h6") %>
+              <%= select_tag(:category,
+                             options_from_collection_for_select(@categories, :id, :name, params[:category]),
+                             class: "form-control",
+                             prompt: t('projects.search_form.category_select')
+                  ) %>
+            </div>
+
+            <div class="form-group margin-right">
+              <%= label_tag(:order_by, t('projects.search_form.order_by_label'), class: "h6") %>
+              <%= select_tag(:order_by,
+                             options_for_select([
+                                                        [t("projects.search_form.order_by_created_at_desc"), "created_at desc"],
+                                                        [t("projects.search_form.order_by_perc_completed_desc"), "perc_completed desc"],
+                                                        [t("projects.search_form.order_by_perc_completed_asc"), "perc_completed asc"]
+                                                ], params[:order_by]),
+                             class: "form-control"
+                  ) %>
+            </div>
+
+            <button class="call-to-action-btn" type="submit">
+              <%= t('projects.search_form.submit') %>&nbsp;&nbsp;&nbsp;<i class="fa fa-search"></i>
+            </button>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

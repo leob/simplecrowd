@@ -2,7 +2,7 @@
   <a href="#" data-toggle="dropdown" class="dropdown-toggle "><%= t("navbar.projects") %></a>
 
   <ul class="dropdown-menu">
-    <li><%= nav_link("search_projects", nil) %></li>
+    <li><%= nav_link("search_projects", projects_path) %></li>
     <li><%= nav_link("create_project", nil) %></li>
   </ul>
 </li>
@@ -14,6 +14,7 @@
     <li><%= nav_link("how_it_works", how_it_works_path) %></li>
     <li><%= nav_link("about_us", about_us_path) %></li>
     <li><%= nav_link("contact", contact_path) %></li>
+    <li><%= nav_link("sitemap", sitemap_path) %></li>
   </ul>
 </li>
 
@@ -23,8 +24,8 @@
       <a href="#" data-toggle="dropdown" class="dropdown-toggle navlink-small"><%= current_user.email %></a>
 
       <ul class="dropdown-menu">
-        <li><%= nav_link("user_projects", nil) %></li>
         <li><%= nav_link("user_settings", nil) %></li>
+        <li><%= nav_link("user_projects", nil) %></li>
 <% if current_user.admin? %>
         <li><%= nav_link("admin_dashboard", admin_root_path) %></li>
 <% end %>
