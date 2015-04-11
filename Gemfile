@@ -13,7 +13,7 @@ gem 'money-rails'
 gem "interactor-rails", "~> 2.0"
 gem 'rails-i18n', '~> 4.0.0'
 
-
+# needed to get I18N url-based locale switching to work, see comments in config/routes.rb
 gem 'routing-filter'
 
 # sort of the same thing as the figaro gem and 'secrets.yml' - do we really need it?? we should make a choice ... see:
@@ -24,6 +24,9 @@ gem 'devise', '3.4.1'
 
 # Use mysql as the database for Active Record
 gem 'mysql2'
+
+# IN PLACE EDITING, see: https://github.com/bernat/best_in_place
+#gem 'best_in_place', '~> 3.0.1'
 
 # Rails 12factor for Heroku: https://github.com/heroku/rails_12factor
 group :production do
