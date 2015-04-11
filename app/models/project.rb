@@ -1,13 +1,13 @@
 class Project < ActiveRecord::Base
    belongs_to :owner, :class_name => 'User', :foreign_key => 'user_id'
-   belongs_to :category    #, :class_name => 'Category', :foreign_key => 'category_id'
+   belongs_to :category #, :class_name => 'Category', :foreign_key => 'category_id'
 
    # Pagination
    paginates_per 30
 
-   validates :name, presence: true, length: { maximum: 50 }
+   validates :name, presence: true, length: {maximum: 50}
    validates :category, presence: true
-   validates :summary, presence: true, length: { maximum: 250 }
+   validates :summary, presence: true, length: {maximum: 250}
    validates :description, presence: true
 
    monetize :target_amount_cents, :collected_amount_cents
@@ -44,8 +44,8 @@ class Project < ActiveRecord::Base
    # NOTE: also do this "before_update" ??
 
    def randomize_file_name
-       extension = File.extname(image_file_name).downcase
-       self.image.instance_write(:file_name, "#{SecureRandom.hex(16)}#{extension}")
+      extension = File.extname(image_file_name).downcase
+      self.image.instance_write(:file_name, "#{SecureRandom.hex(16)}#{extension}")
    end
 
    #
@@ -76,36 +76,16 @@ class Project < ActiveRecord::Base
    # SCOPE, ORDER, PAGING
 
    #
-   # Instead of the Rails "scope" macro we just use class methods. Exactly the same functionality but more flexible.
+   # Instead of the Rails "scope" macro we generally just use class methods; same functionality but more flexible.
    #
 
+   # DEFAULT SCOPE (for all queries outside of the admin namespace) - note that this IS a scope ...
+   default_scope { where(draft: false, disabled: false) }
+
    def self.selected_projects(nr_projects = 12)
-      where(editor_pick: true, draft: false, disabled: false)
+      where(editor_pick: true)
           .order(created_at: :desc)
           .limit(nr_projects)
-   end
-
-   # scope :editor_picks, -> {
-   #                       where(editor_pick: true)
-   #                           .order("updated_at DESC")
-   # }
-
-   #scope :by_name, -> { order("name ASC") }
-
-   def self.default_order()
-      order(name: :asc)
-   end
-
-   def self.paged(page_number)
-      self.default_order().page page_number
-   end
-
-   def self.search_paged(search, page_number)
-      if search
-         where("name LIKE ?", "%#{search.downcase}%").default_order().page page_number
-      else
-         self.paged(page_number)
-      end
    end
 
    def self.search_and_order(name, category, order_by)
@@ -116,9 +96,32 @@ class Project < ActiveRecord::Base
       end
 
       if not category.blank?
-          query = query.where(:category => category)
+         query = query.where(:category => category)
       end
 
       query.order(created_at: :desc)
    end
+
+   # ADMIN NAMESPACE ONLY SCOPES - CLEARING THE DEFAULT SCOPE
+
+   def self.paged(page_number)
+      self.unscoped do
+         self.default_order().page page_number
+      end
+   end
+
+   def self.search_paged(search, page_number)
+      self.unscoped do
+         if search
+            where("name LIKE ?", "%#{search.downcase}%").default_order().page page_number
+         else
+            self.paged(page_number)
+         end
+      end
+   end
+
+   def self.default_order
+      order(name: :asc)
+   end
+
 end
