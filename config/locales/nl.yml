@@ -99,7 +99,7 @@ nl:
       submit: Zoek
   project_block:
     stats:
-      target: doelbedrag
+      target: doel
       funded: opgehaald
       days_left: dagen over
   activerecord:
