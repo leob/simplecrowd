@@ -30,9 +30,9 @@
   <script src="//ajax.googleapis.com/ajax/libs/webfont/1.5.10/webfont.js"></script>
   <script>
       WebFont.load({
-        google: {
-          families: ['Open Sans', 'Helvetica Neue']
-        }
+          google: {
+              families: ['Open Sans', 'Helvetica Neue']
+          }
       });
   </script>
 
@@ -59,22 +59,21 @@
     <%= render 'layouts/navbar' %>
   </header>
 
-  <%# 'main' is for ARIA see: https://dequeuniversity.com/assets/html/jquery-summit/html5/slides/landmarks.html %>
-  <div class="container-fluid" role="main" id="content" tabindex="-1">
+  <% if content_for?(:wide_content) %>
+      <%= yield :wide_content %>
+  <% else %>
 
-    <% if content_for?(:wide_content) %>
-        <%= yield :wide_content %>
-    <% else %>
+      <%# 'main' is for ARIA see: https://dequeuniversity.com/assets/html/jquery-summit/html5/slides/landmarks.html %>
+      <div class="container push-down" role="main" id="content" tabindex="-1">
+        <%= render 'layouts/flash_messages' %>
 
-        <div class="container push-down">
-          <%= render 'layouts/flash_messages' %>
-
+        <%# 'region' is for ARIA see: https://dequeuniversity.com/assets/html/jquery-summit/html5/slides/landmarks.html %>
+        <div class="content-row-smaller" role="region">
           <%= yield %>
         </div>
+      </div>
 
-    <% end %>
-
-  </div>
+  <% end %>
 
 </div>
 

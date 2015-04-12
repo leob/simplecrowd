@@ -1,5 +1,4 @@
-<div class="row">
-  <div class="col-sm-6 ">
+<%= form_wrapper do %>
     <%= form_title("sign_in") %>
 
     <%= form_for(resource, :as => resource_name, 
@@ -42,6 +41,4 @@
       <% end %>
 
       <%= render "devise/shared/links" %>
-
-    </div>
-  </div>
+<% end %>

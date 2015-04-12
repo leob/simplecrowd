@@ -1,5 +1,40 @@
 if("undefined"==typeof jQuery)throw new Error("Bootstrap's Javascript requires jQuery");
 
+/**
+ * @preserve
+ *
+ * The module below provides a jQuery function "dropdownHoverOff" which is the reverse of the "dropdownHover" function
+ * provided by the Bootstrap Dropdown Hover plugin (http://cameronspear.com/blog/bootstrap-dropdown-on-hover-plugin/).
+ *
+ * What it does is simply unbind all of the "hover" event handlers that would have been registered by a call to
+ * "dropdownHover". So, a call to:
+ *
+ * $('.dropdown-toggle').dropdownHoverOff();
+ *
+ * undoes a call to:
+ *
+ * $('.dropdown-toggle').dropdownHover();
+ *
+ * and vice versa.
+ */
+;(function ($, window, undefined) {
+    $.fn.dropdownHoverOff = function (options) {
+
+        if('ontouchstart' in document) return this;
+
+        return this.each(function () {
+            var $this = $(this), $parent = $this.parent();
+
+            $parent.unbind('mouseenter mouseleave');
+            $this.unbind('mouseenter mouseleave');
+
+            $parent.find('.dropdown-submenu').each(function (){
+                $this.unbind('mouseenter mouseleave');
+            });
+        });
+    };
+})(jQuery, window);
+
 //
 // File upload control javascript handler.
 //
@@ -18,6 +53,10 @@ $(document).ready( function() {
 
     enquire.register("screen and (min-width:768px)", function() {
         $('.dropdown-toggle').dropdownHover();
+    });
+
+    enquire.register("screen and (max-width:767px)", function() {
+        $('.dropdown-toggle').dropdownHoverOff();
     });
 });
 
@@ -48,4 +87,3 @@ $(document).ready( function() {
  $(document).on('page:change', function() {
  //
  });*/
-

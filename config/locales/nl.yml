@@ -88,10 +88,10 @@ nl:
   projects:
     search_form:
       title: Zoek projecten
-      name_label: Zoek op
-      name_placeholder: voer (deel) projectnaam in
-      category_label: in categorie
-      category_select: "-in alle categorieen-"
+      name_label: "zoeken op:"
+      name_placeholder: voer tekst in en druk ENTER
+      category_label: "zoeken in:"
+      category_select: "-in alle projectcategorieen zoeken-"
       order_by_label: sorteer op
       order_by_created_at_desc: "nieuwste bovenaan"
       order_by_perc_completed_desc: "hoogste % behaald"

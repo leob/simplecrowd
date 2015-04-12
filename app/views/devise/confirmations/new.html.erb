@@ -1,31 +1,28 @@
-<div class="row">
-  <div class="col-sm-6 ">
+<%= form_wrapper do %>
     <h1>Resend confirmation instructions</h1>
 
-    <%= form_for(resource, :as => resource_name, 
-    :url => confirmation_path(resource_name), 
-    :html => { :method => :post, :role => "form" }) do |f| %>
-  
-      <%= devise_form_errors %>
+    <%= form_for(resource, :as => resource_name,
+                 :url => confirmation_path(resource_name),
+                 :html => {:method => :post, :role => "form"}) do |f| %>
 
-      <div class="form-group">
-        <%= f.label :email %>
-        <div class="row">
-          <div class="col-sm-6">      
-            <%= f.text_field :email, :autofocus => true, class: "form-control" %>  
+        <%= devise_form_errors %>
+
+        <div class="form-group">
+          <%= f.label :email %>
+          <div class="row">
+            <div class="col-sm-6">
+              <%= f.text_field :email, :autofocus => true, class: "form-control" %>
+            </div>
           </div>
         </div>
-      </div>
-  
-      <div class="row">
-        <div class="col-sm-6">
-          <%= f.submit "Resend confirmation instructions", class: "btn btn-primary" %>
+
+        <div class="row">
+          <div class="col-sm-6">
+            <%= f.submit "Resend confirmation instructions", class: "btn btn-primary" %>
+          </div>
         </div>
-      </div>    
 
-      <% end %>
+    <% end %>
 
-      <%= render "devise/shared/links" %>
-
-    </div>
-  </div>
+    <%= render "devise/shared/links" %>
+<% end %>

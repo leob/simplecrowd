@@ -88,10 +88,10 @@ en:
   projects:
     search_form:
       title: Search projects
-      name_label: Search for
-      name_placeholder: type (part of) the project name
-      category_label: in category
-      category_select: "-in all categories-"
+      name_label: "search for:"
+      name_placeholder: type text and press ENTER
+      category_label: "search in:"
+      category_select: "-search in all project categories-"
       order_by_label: sort by
       order_by_created_at_desc: "newest first"
       order_by_perc_completed_desc: "highest % funded first"
