@@ -1,10 +1,25 @@
 <% page_title(t("pages.projects.title")) %>
 
-<% content_for :wide_content do %>
+<%= render 'search_projects_form' %>
+<%= render 'projects_grid' %>
 
-    <div class="container push-down">
-      <%= render 'search_projects_form' %>
-      <%= render 'selected_projects' %>
-    </div>
+<% content_for :additional_scripts do %>
+    <script type="text/javascript">
+        $(".has-clear-icon").bind("keyup focus", function () {
+            var t = $(this);
+            t.next('span').toggle(Boolean(t.val()));
+        });
 
+        $(".clear-icon").hide($(this).prev('input').val());
+
+        $(".clear-icon").click(function () {
+            $(this).prev('input').val('').focus();
+            $(this).hide();
+            $("#project-search-form").submit();
+        });
+
+        $("#project-search-category").bind("change", function () {
+            $("#project-search-form").submit();
+        });
+    </script>
 <% end %>

@@ -1,46 +1,57 @@
-<div class="content-container" role="region">
-  <div class="content-row content-row-smaller">
-    <div class="content-col">
+<h3 class="text-center"><%= t('projects.search_form.title') %></h3>
 
-      <h3 class="text-center"><%= t('projects.search_form.title') %></h3>
+<div class="row">
+  <div class="col-xs-12 form-panel margin-top margin-bottom">
 
-      <div class="form-panel margin-top margin-bottom">
-        <%= form_tag(projects_path, method: 'get', class: "form-inline", role: "form") do %>
+    <%= form_tag(projects_path, method: 'get', id: "project-search-form", class: "form-inline", role: "form") do %>
 
-            <div class="form-group margin-right">
-              <%= label_tag(:name, t('projects.search_form.name_label'), class: "h6") %>
+        <div class="form-group col-sm-6">
+          <div class="row">
+            <%= label_tag(:name, t('projects.search_form.name_label'), class: "h6 col-md-3") %>
+
+            <div class="input-group col-md-9">
               <%=
-                  search_field_tag(:name, params[:name], class: "form-control",
-                                   placeholder: t('projects.search_form.name_placeholder'))
+                  text_field_tag(:name, params[:name],
+                                 class: "form-control has-clear-icon",
+                                 autofocus: true,
+                                 placeholder: t('projects.search_form.name_placeholder'))
               %>
-            </div>
+              <span class="clear-icon fa fa-times-circle form-control-feedback"></span>
 
-            <div class="form-group margin-right">
-              <%= label_tag(:category, t('projects.search_form.category_label'), class: "h6") %>
-              <%= select_tag(:category,
-                             options_from_collection_for_select(@categories, :id, :name, params[:category]),
-                             class: "form-control",
-                             prompt: t('projects.search_form.category_select')
-                  ) %>
+              <span class="input-group-btn">
+                <button class="btn btn-action" type="submit"><i class="fa fa-search"></i></button>
+              </span>
             </div>
+          </div>
+        </div>
 
-            <div class="form-group margin-right">
-              <%= label_tag(:order_by, t('projects.search_form.order_by_label'), class: "h6") %>
-              <%= select_tag(:order_by,
-                             options_for_select([
-                                                        [t("projects.search_form.order_by_created_at_desc"), "created_at desc"],
-                                                        [t("projects.search_form.order_by_perc_completed_desc"), "perc_completed desc"],
-                                                        [t("projects.search_form.order_by_perc_completed_asc"), "perc_completed asc"]
-                                                ], params[:order_by]),
-                             class: "form-control"
-                  ) %>
-            </div>
+        <div class="form-group col-sm-6">
+          <div class="row">
+            <%= label_tag(:category, t('projects.search_form.category_label'), class: "h6 col-md-3") %>
 
-            <button class="call-to-action-btn" type="submit">
-              <%= t('projects.search_form.submit') %>&nbsp;&nbsp;&nbsp;<i class="fa fa-search"></i>
-            </button>
-        <% end %>
-      </div>
-    </div>
+            <%= select_tag(:category,
+                           options_from_collection_for_select(@categories, :id, :name, params[:category]),
+                           class: "form-control col-md-9",
+                           id: "project-search-category",
+                           prompt: t('projects.search_form.category_select')
+                ) %>
+          </div>
+        </div>
+    <% end %>
+
   </div>
 </div>
+
+<!--<%#= label_tag(:order_by, t('projects.search_form.order_by_label'), class: "h6") %>-->
+<%#= select_tag(:order_by,
+#                              options_for_select([
+#                                                         [t("projects.search_form.order_by_created_at_desc"), "created_at desc"],
+#                                                         [t("projects.search_form.order_by_perc_completed_desc"), "perc_completed desc"],
+#                                                         [t("projects.search_form.order_by_perc_completed_asc"), "perc_completed asc"]
+#                                                 ], params[:order_by]),
+#                              class: "form-control"
+                  ) %>
+<!--<button class="call-to-action-btn" type="submit">-->
+<%#= t('projects.search_form.submit') %>
+<!--&nbsp;&nbsp;&nbsp;<i class="fa fa-search"></i>-->
+<!--</button>-->

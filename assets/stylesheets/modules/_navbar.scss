@@ -38,7 +38,7 @@
 // This CSS class can/should be used for content (such as a web form) for which it doesn't make sense to be partially
 // 'hidden' under the navbar.
 //
-.container.push-down {
+.push-down {
   margin-top: $navbar-expanded-height;
 }
 
@@ -48,7 +48,7 @@
 // On small screens we use the shrinked navbar, so the pushdown amount should be less.
 //
 @media (max-width: $screen-xs-max) {
-  .container.push-down {
+  .push-down {
     margin-top: $navbar-shrinked-height;
   }
 }

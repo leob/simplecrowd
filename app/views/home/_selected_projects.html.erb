@@ -1,31 +1,17 @@
 <%# 'region' is for ARIA see: https://dequeuniversity.com/assets/html/jquery-summit/html5/slides/landmarks.html %>
-<div class="content-container" role="region">
-  <div class="content-row content-row-smaller">
-    <div class="content-col">
+<div class="content-row-smaller" role="region">
 
-      <div class="container-relative">
-        <h3 class="text-center"><%= t('home.selected_projects.title') %></h3>
+  <div class="container-relative">
+    <h3 class="text-center"><%= t('home.selected_projects.title') %></h3>
 
-        <%# hide the 'more' button on smaller devices because there is not enough room %>
-        <div class="container-align-right hidden-sm hidden-xs">
-          <a class="btn-more" href="<%= projects_url %>">
-            <%= t('home.selected_projects.more_button') %> &nbsp;<i class="fa fa-arrow-circle-right"></i>
-          </a>
-        </div>
-      </div>
-
-      <% @selected_projects.each_slice(4) do |row| %>
-          <div class="row">
-
-            <% row.each do |project| %>
-                <div class="col-md-3 col-sm-6 col-xs-12">
-                  <div class="center-block">
-                    <%= render partial: 'projects/block', locals: {project: project} %>
-                  </div>
-                </div>
-            <% end %>
-          </div>
-      <% end %>
+    <%# hide the 'more' button on smaller devices because there is not enough room %>
+    <div class="container-align-right hidden-sm hidden-xs">
+      <a class="btn-more" href="<%= projects_url %>">
+        <%= t('home.selected_projects.more_button') %> &nbsp;<i class="fa fa-arrow-circle-right"></i>
+      </a>
     </div>
   </div>
+
+  <%= render 'projects/projects_grid' %>
+
 </div>

@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta charset="utf-8">
   <%# don't use minimum/maximum-scale, bad for accessibility, see: http://a11yproject.com/posts/never-use-maximum-scale
   <%#meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no"%>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <%# <!-- meta tags -->
     <meta name="description" content="Simple demo crowdfunding website">
     <meta name="author" content="leob">
@@ -30,9 +30,9 @@
   <script src="//ajax.googleapis.com/ajax/libs/webfont/1.5.10/webfont.js"></script>
   <script>
       WebFont.load({
-        google: {
-          families: ['Open Sans', 'Helvetica Neue']
-        }
+          google: {
+              families: ['Open Sans', 'Helvetica Neue']
+          }
       });
   </script>
 
@@ -47,27 +47,33 @@
 <body data-no-turbolink>
 
 <div id="wrap">
+  <%#
+      ARIA skip nav links technique, see:
+        http://getbootstrap.com/getting-started/#accessibility
+        http://a11yproject.com/posts/skip-nav-links/
+  %>
+  <!--<a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>-->
+
   <%# 'banner' is for ARIA see: https://dequeuniversity.com/assets/html/jquery-summit/html5/slides/landmarks.html %>
   <header role="banner">
     <%= render 'layouts/navbar' %>
   </header>
 
-  <%# 'main' is for ARIA see: https://dequeuniversity.com/assets/html/jquery-summit/html5/slides/landmarks.html %>
-  <div class="container-fluid" role="main">
+  <% if content_for?(:wide_content) %>
+      <%= yield :wide_content %>
+  <% else %>
 
-    <% if content_for?(:wide_content) %>
-        <%= yield :wide_content %>
-    <% else %>
+      <%# 'main' is for ARIA see: https://dequeuniversity.com/assets/html/jquery-summit/html5/slides/landmarks.html %>
+      <div class="container push-down" role="main" id="content" tabindex="-1">
+        <%= render 'layouts/flash_messages' %>
 
-        <div class="container push-down">
-          <%= render 'layouts/flash_messages' %>
-
+        <%# 'region' is for ARIA see: https://dequeuniversity.com/assets/html/jquery-summit/html5/slides/landmarks.html %>
+        <div class="content-row-smaller" role="region">
           <%= yield %>
         </div>
+      </div>
 
-    <% end %>
-
-  </div>
+  <% end %>
 
 </div>
 

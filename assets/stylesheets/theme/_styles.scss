@@ -25,6 +25,16 @@ h1, h2, h3 {
 //  color: #ffffff;
 //}
 
+.btn-action {
+  @include button-variant($btn-action-color, $btn-action-bg, $btn-action-border);
+}
+
+.btn-more {
+  @extend .btn;
+  @extend .btn-success;
+  padding: 8px 38px;
+}
+
 .btn-lg {
   //padding: 16px 32px;
   padding: 16px 20px;
@@ -38,12 +48,6 @@ h1, h2, h3 {
 .btn-xs {
   //padding: 4px 8px;
   padding: 4px 6px;
-}
-
-.btn-more {
-  @extend .btn;
-  @extend .btn-success;
-  padding: 8px 38px;
 }
 
 // override progress bar styling from Yeti to use rounded corners

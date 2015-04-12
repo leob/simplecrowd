@@ -2,8 +2,14 @@
 
 <% content_for :wide_content do %>
 
-    <%= render 'home/hero/hero_unit' %>
-    <%= render 'selected_projects' %>
+    <%# 'main' is for ARIA see: https://dequeuniversity.com/assets/html/jquery-summit/html5/slides/landmarks.html %>
+    <div class="container-fluid" role="main" id="content" tabindex="-1">
+      <%= render 'home/hero/hero_unit' %>
+
+      <div class="container">
+        <%= render 'selected_projects' %>
+      </div>
+    </div>
 
 <% end %>
 
