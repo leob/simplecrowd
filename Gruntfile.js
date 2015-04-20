@@ -103,6 +103,7 @@ module.exports = function (grunt) {
                     //'<%= paths.src.bootstrap %>/javascripts/bootstrap/affix.js',
                     '<%= paths.src.bower %>/bootstrap-hover-dropdown/bootstrap-hover-dropdown.js',
                     '<%= paths.src.bower %>/enquire/dist/enquire.js',
+                    '<%= paths.src.bower %>/spin.js/spin.js',
                     '<%= paths.src.javascripts %>/application.js'
                 ],
                 dest: '<%= paths.dest %>/javascripts/application.js'

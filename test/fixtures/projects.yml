@@ -5,7 +5,7 @@ one:
   name: One
   summary: MyText
   description: MyText
-  user: admin_user
+  owner: admin_user
   target_amount_currency: EUR
   target_amount_cents: 20000
   collected_amount_currency: EUR
@@ -18,7 +18,7 @@ two:
   name: Two
   summary: MyText
   description: MyText
-  user: admin_user
+  owner: admin_user
   target_amount_currency: EUR
   target_amount_cents: 10000
   collected_amount_currency: EUR

@@ -143,48 +143,48 @@ class PlaceOrder
    organize DoProjectStuff, DoProjectStuff2, DoStuff
 end
 
-class InteractorTest < ActiveSupport::TestCase
+class InteractorTest < ModelTest
 
    describe PlaceOrder, "PlaceOrder" do
 
-      let(:project_params) { {name: "test1", summary: "test1", description: "test1"} }
-      let(:project_params2) { {name: "test2", summary: "test2", description: "test2"} }
+      let(:project_params) { {name: "test1", summary: "test1", description: "test1", category: categories(:one)} }
+      let(:project_params2) { {name: "test2", summary: "test2", description: "test2", category: categories(:one)} }
       let(:invalid_project_params) { {description: "bla_and_no_name"} }
 
       let(:mailer) { LowMailer.new }
 
       it "should create both projects" do
-         @result = PlaceOrder.call(action: "success", project_params: project_params, project_params2: project_params2,
+         result = PlaceOrder.call(action: "success", project_params: project_params, project_params2: project_params2,
             mailer: mailer)
 
-         @result.success?.must_equal true
-         @result.project.wont_be_nil
-         @result.project2.wont_be_nil
-         @result.mailer.message.must_equal "mail_message"
+         result.success?.must_equal true
+         result.project.wont_be_nil
+         result.project2.wont_be_nil
+         result.mailer.message.must_equal "mail_message"
 
          Project.find_by_name(project_params[:name]).name.must_equal project_params[:name]
          Project.find_by_name(project_params2[:name]).name.must_equal project_params2[:name]
       end
 
       it "should rollback the transaction" do
-         @result = PlaceOrder.call(action: "failure", project_params: project_params, project_params2: project_params2,
-                                   mailer: mailer)
+         result = PlaceOrder.call(action: "failure", project_params: project_params, project_params2: project_params2,
+                                  mailer: mailer)
 
-         @result.failure?.must_equal true
-         @result.project.must_be_nil
-         @result.project2.must_be_nil
+         result.failure?.must_equal true
+         result.project.must_be_nil
+         result.project2.must_be_nil
 
          Project.find_by_name(project_params[:name]).must_be_nil
          Project.find_by_name(project_params2[:name]).must_be_nil
       end
 
       it "should again rollback the transaction" do
-         @result = PlaceOrder.call(action: "failure", project_params: project_params,
-                                   project_params2: invalid_project_params, mailer: mailer)
+         result = PlaceOrder.call(action: "failure", project_params: project_params,
+                                  project_params2: invalid_project_params, mailer: mailer)
 
-         @result.failure?.must_equal true
-         @result.project.must_be_nil
-         @result.project2.must_be_nil
+         result.failure?.must_equal true
+         result.project.must_be_nil
+         result.project2.must_be_nil
 
          Project.find_by_name(project_params[:name]).must_be_nil
          Project.find_by_name(project_params2[:name]).must_be_nil
