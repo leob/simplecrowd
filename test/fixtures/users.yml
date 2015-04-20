@@ -23,6 +23,7 @@ admin_user:
   email: admin@example.org
   encrypted_password: p456
   confirmed_at: 2015/01/01
+  admin: true
 
 # again the 'encrypted_password' (and email) fields aren't needed for controller tests, but the code below shows how
 # to set the encrypted password with 'digest'

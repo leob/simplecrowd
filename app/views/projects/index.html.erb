@@ -26,6 +26,10 @@
             $("#project-search-category").bind("change", function () {
                 $("#project-search-form").submit();
             });
+
+            $("#project-search-form").bind("submit", function () {
+                var spinner = new Spinner().spin(document.body);
+            });
         });
     </script>
 <% end %>

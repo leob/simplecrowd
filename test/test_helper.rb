@@ -11,7 +11,8 @@ require "minitest/reporters"
 require 'mocha/mini_test'
 
 Minitest::Reporters.use!(
-    Minitest::Reporters::SpecReporter.new,
+    #Minitest::Reporters::SpecReporter.new
+    Minitest::Reporters::SpecReporter.new(args: "--seed 123456 --verbose"),
     ENV,
     Minitest.backtrace_filter
 )
