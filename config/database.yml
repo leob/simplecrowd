@@ -15,7 +15,7 @@ default: &default
   pool: 5
   username: <%= ENV['DB_DEV_USER'] %>
   password: <%= ENV['DB_DEV_PWD'] %>
-  socket: /var/run/mysqld/mysqld.sock
+  socket: <%= ENV['DB_DEV_SOCKET'] %>
 
 development:
   <<: *default
