@@ -3,20 +3,24 @@
 // --------------------------------------------------
 
 // Scroll-to-top button, taken from shortcodes.css from  EVOLVE theme by alphawd (see also: Actra-next website)
-.btn-scroll-to-top:before {
+.btn-scroll-to-top:before, .btn-scroll-to-bottom:before {
   color: #b8bcc0;
-  content: "\f106";
   display: inline-block;
   font: 14px "FontAwesome";
   vertical-align: middle;
 }
-.btn-scroll-to-top.active {
+.btn-scroll-to-top:before {
+  content: "\f106";
+}
+.btn-scroll-to-bottom:before {
+  content: "\f107";
+}
+.btn-scroll-to-top.active, .btn-scroll-to-bottom.active {
   opacity: 1;
 }
-.btn-scroll-to-top {
+.btn-scroll-to-top, .btn-scroll-to-bottom  {
   background-color: rgba(52, 56, 59, 0.8);
   border-radius: 2px;
-  bottom: 30px;
   cursor: pointer;
   height: 44px;
   line-height: 42px;
@@ -27,4 +31,9 @@
   transition: opacity 0.2s ease 0s;
   width: 44px;
 }
-
+.btn-scroll-to-top  {
+  bottom: 30px;
+}
+.btn-scroll-to-bottom  {
+  top: 60px;
+}

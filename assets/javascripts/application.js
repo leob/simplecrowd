@@ -17,7 +17,7 @@ if("undefined"==typeof jQuery)throw new Error("Bootstrap's Javascript requires j
  *
  * and vice versa.
  */
-;(function ($, window, undefined) {
+/*;(function ($, window, undefined) {
     $.fn.dropdownHoverOff = function (options) {
 
         if('ontouchstart' in document) return this;
@@ -33,7 +33,7 @@ if("undefined"==typeof jQuery)throw new Error("Bootstrap's Javascript requires j
             });
         });
     };
-})(jQuery, window);
+})(jQuery, window);*/
 
 //
 // File upload control javascript handler.
@@ -51,13 +51,13 @@ $(document).ready( function() {
         input.trigger('fileselect', [numFiles, file]);
     });
 
-    enquire.register("screen and (min-width:768px)", function() {
+    /*enquire.register("screen and (min-width:768px)", function() {
         $('.dropdown-toggle').dropdownHover();
     });
 
     enquire.register("screen and (max-width:767px)", function() {
         $('.dropdown-toggle').dropdownHoverOff();
-    });
+    });*/
 });
 
 ////////////////////// NOT CURRENTLY USED //////////////////////

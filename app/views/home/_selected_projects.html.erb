@@ -1,16 +1,23 @@
 <%# 'region' is for ARIA see: https://dequeuniversity.com/assets/html/jquery-summit/html5/slides/landmarks.html %>
 <div class="content-row-smaller" role="region">
 
-  <div class="container-relative">
-    <h3 class="text-center"><%= t('home.selected_projects.title') %></h3>
+  <div class="row">
+    <div class="col-sm-3 col-xs-12">
+    </div>
 
-    <%# hide the 'more' button on smaller devices because there is not enough room %>
-    <div class="container-align-right hidden-sm hidden-xs">
-      <a class="btn-more" href="<%= projects_url %>">
+    <div class="col-sm-6 col-xs-12">
+      <h3 class="text-center"><%= t('home.selected_projects.title') %></h3>
+    </div>
+
+    <div class="col-sm-3 col-xs-12">
+      <a class="btn btn-success btn-block margin-top" href="<%= projects_url %>">
         <%= t('home.selected_projects.more_button') %> &nbsp;<i class="fa fa-arrow-circle-right"></i>
       </a>
     </div>
   </div>
+
+  <%# separator only on XS-screens %>
+  <div class="visible-xs-block margin-bottom"></div>
 
   <%= render 'projects/projects_grid' %>
 

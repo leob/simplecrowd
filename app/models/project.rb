@@ -90,11 +90,12 @@ class Project < ActiveRecord::Base
           .limit(nr_projects)
    end
 
-   def self.search_and_order(name, category, order_by)
+   def self.search_and_order(text, category, order_by)
       query = all
 
-      if not name.blank?
-         query = query.where("name LIKE ?", "%#{name.downcase}%")
+      if not text.blank?
+         value = "%#{text.downcase}%"
+         query = query.where("name LIKE ? OR summary like ?", value, value)
       end
 
       if not category.blank?

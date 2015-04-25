@@ -85,7 +85,7 @@ module.exports = function (grunt) {
             },
             script_src: {
                 src: [
-                    '<%= paths.src.bower %>/jquery/dist/jquery.js',
+                    //'<%= paths.src.bower %>/jquery/dist/jquery.js',
                     '<%= paths.src.bower %>/jquery-ujs/src/rails.js',
                     //'<%= paths.src.bower %>/bootstrap/dist/js/bootstrap.js',
                     // SELECTIVELY INCLUDE BOOTSTRAP COMPONENTS:
@@ -101,8 +101,8 @@ module.exports = function (grunt) {
                     //'<%= paths.src.bootstrap %>/javascripts/bootstrap/scrollspy.js',
                     '<%= paths.src.bootstrap %>/javascripts/bootstrap/tab.js',
                     //'<%= paths.src.bootstrap %>/javascripts/bootstrap/affix.js',
-                    '<%= paths.src.bower %>/bootstrap-hover-dropdown/bootstrap-hover-dropdown.js',
-                    '<%= paths.src.bower %>/enquire/dist/enquire.js',
+                    //'<%= paths.src.bower %>/bootstrap-hover-dropdown/bootstrap-hover-dropdown.js',
+                    //'<%= paths.src.bower %>/enquire/dist/enquire.js',
                     '<%= paths.src.bower %>/spin.js/spin.js',
                     '<%= paths.src.javascripts %>/application.js'
                 ],

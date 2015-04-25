@@ -6,20 +6,8 @@
 <% content_for :additional_scripts do %>
     <script type="text/javascript">
         $(document).ready(function($) {
-            if ($(".has-clear-icon").val()) {
-                $(".clear-icon").show();
-            } else {
-                $(".clear-icon").hide();
-            }
-
-            $(".has-clear-icon").bind("keyup focus", function () {
-                var t = $(this);
-                t.next('span').toggle(Boolean(t.val()));
-            });
-
-            $(".clear-icon").click(function () {
-                $(this).prev('input').val('').focus();
-                $(this).hide();
+            $("#clear-search-input-button").click(function () {
+                $("#search-input").val('');
                 $("#project-search-form").submit();
             });
 
@@ -28,7 +16,7 @@
             });
 
             $("#project-search-form").bind("submit", function () {
-                new Spinner().spin(document.body);
+                new Spinner().spin(document.getElementById("search-panel"));
             });
         });
     </script>

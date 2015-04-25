@@ -30,9 +30,9 @@ $icon-font-path: if($bootstrap-sass-asset-helper, "bootstrap/", "../fonts/bootst
 // Core CSS
 @import "../../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/scaffolding";
 @import "../../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/type";
-@import "../../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/code";
+//@import "../../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/code";
 @import "../../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/grid";
-@import "../../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/tables";
+//@import "../../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/tables";
 @import "../../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/forms";
 @import "../../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/buttons";
 
@@ -53,8 +53,8 @@ $icon-font-path: if($bootstrap-sass-asset-helper, "bootstrap/", "../fonts/bootst
 @import "../../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/alerts";
 @import "../../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/progress-bars";
 //@import "../../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/media";
-@import "../../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/list-group";
-@import "../../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/panels";
+//@import "../../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/list-group";
+//@import "../../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/panels";
 @import "../../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/responsive-embed";
 //@import "../../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/wells";
 @import "../../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/close";

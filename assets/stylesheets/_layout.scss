@@ -17,18 +17,6 @@ html,body {
   padding-bottom: 120px;
 }
 
-// containers with absolute/relative positioning
-
-.container-relative {
-  position: relative;
-}
-
-.container-align-right {
-  position: absolute;
-  right: 12px;
-  bottom: -5px;
-}
-
 // content row that is slightly narrower and looks better on larger screens.
 // on small screens we make it the default width (NOT narrower) to optimize screen space
 .content-row-smaller {

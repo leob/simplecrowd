@@ -17,14 +17,18 @@ $call-to-action-font-size-small: 13px;
 
 .hero-unit {
   @extend .text-center;
-  height: $hero-height;
-  background-image: url("/images/bg.jpg");
   background-size: cover;
   background-position: center center;
   @include make-sm-column(12, 0);
 
+  @media (min-width: $screen-sm-min) {
+    height: $hero-height;
+    background-image: url("/images/bg.jpg");
+  }
+
   @media (max-width: $screen-xs-max) {
     height: $hero-height-sm;
+    background-image: url("/images/bg-small.jpg");
   }
 }
 
@@ -52,7 +56,7 @@ $call-to-action-font-size-small: 13px;
   font-weight: 400;
 
   @media (max-width: $screen-xs-max) {
-    font-size: 30px;
+    font-size: 25px;
   }
 }
 
