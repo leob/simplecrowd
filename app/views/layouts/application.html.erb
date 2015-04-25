@@ -18,6 +18,14 @@
   <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => false %>
 
   <%#
+      Load jQuery from CDN, see: http://encosia.com/3-reasons-why-you-should-let-google-host-jquery-for-you/
+      Note: the most popular version currently (2015/04/25) seems to be jQuery 1.11.1, so that's what we use:
+        http://w3techs.com/technologies/details/js-jquery/all/all
+        http://w3techs.com/technologies/details/js-jquery/1/all
+        http://w3techs.com/technologies/details/js-jquery/1.11/all
+  %>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <%#
       Prevent "FOUC" (Flash of Unstyled Content) that you sometimes see under Firefox due to loading of remote fonts
       (Google fonts etc), this is more visible under e.g. Heroku (higher latency) than when deployed locally.
 
@@ -93,6 +101,7 @@
 <%= yield :additional_scripts %>
 
 <div class="btn-scroll-to-top"></div>
+<div class="btn-scroll-to-bottom"></div>
 
 </body>
 </html>

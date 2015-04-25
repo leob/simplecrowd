@@ -1,7 +1,7 @@
 <h3 class="text-center"><%= t('projects.search_form.title') %></h3>
 
 <div class="row">
-  <div class="col-xs-12 form-panel margin-top margin-bottom">
+  <div class="col-xs-12 form-panel margin-top margin-bottom" id="search-panel">
 
     <%= form_tag(projects_path, method: 'get', id: "project-search-form", class: "form-inline", role: "form") do %>
 
@@ -10,14 +10,17 @@
             <%= label_tag(:name, t('projects.search_form.name_label'), class: "h6 col-md-3") %>
 
             <div class="input-group col-md-9">
+              <span class="input-group-btn input-group-left-icon-btn">
+                <button class="btn btn-action" id="clear-search-input-button" type="button">
+                    <i class="fa fa-times-circle"></i>
+                </button>
+              </span>
               <%=
-                  text_field_tag(:name, params[:name],
+                  search_field_tag(:text, params[:text],
                                  class: "form-control has-clear-icon",
-                                 autofocus: true,
+                                 id: "search-input",
                                  placeholder: t('projects.search_form.name_placeholder'))
               %>
-              <span class="clear-icon fa fa-times-circle form-control-feedback"></span>
-
               <span class="input-group-btn">
                 <button class="btn btn-action" type="submit"><i class="fa fa-search"></i></button>
               </span>

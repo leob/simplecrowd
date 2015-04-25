@@ -1,12 +1,9 @@
-<% @selected_projects.each_slice(4) do |row| %>
-  <div class="row">
-
-    <% row.each do |project| %>
-        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+<div class="row">
+    <% @selected_projects.each do |project| %>
+        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 project-block-separator">
           <div class="center-block">
             <%= render partial: 'projects/block', locals: {project: project} %>
           </div>
         </div>
     <% end %>
-  </div>
-<% end %>
+</div>

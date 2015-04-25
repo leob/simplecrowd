@@ -1,21 +1,34 @@
 <script>
     $(document).ready(function($) {
         $(window).scroll(function () {
-            if ($(document).scrollTop() > 50) {
+            if ($(window).scrollTop() > 50) {
                 $('nav').addClass('navbar-shrink');
             } else {
                 $('nav').removeClass('navbar-shrink');
             }
 
-            if ($(document).scrollTop() > 100) {
+            if ($(window).scrollTop() > 100) {
                 $('.btn-scroll-to-top').addClass('active');
+
+                if ($(window).scrollTop() + $(window).height() >= $(document).height() - 100) {
+                    $('.btn-scroll-to-bottom').removeClass('active');
+                } else {
+                    $('.btn-scroll-to-bottom').addClass('active');
+                }
+
             } else {
                 $('.btn-scroll-to-top').removeClass('active');
+                $('.btn-scroll-to-bottom').removeClass('active');
             }
         });
 
         $('.btn-scroll-to-top').click(function(){
             $('html, body').animate({scrollTop : 0},800);
+            return false;
+        });
+
+        $('.btn-scroll-to-bottom').click(function(){
+            $('html, body').animate({scrollTop : $(document).height()},800);
             return false;
         });
 

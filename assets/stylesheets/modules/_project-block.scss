@@ -101,3 +101,11 @@ ul.project-block-stats {
 .project-block-stats-value {
   font-weight: 700;
 }
+
+.project-block-separator {
+  @media (max-width: $screen-xs-max) {
+    border-top: 1px solid lightgray;
+    margin-top: 10px;
+    padding-top: 10px;
+  }
+}
