@@ -8,7 +8,16 @@
         <span class="icon-bar"></span>
       </button>
 
-      <%= link_to root_path, class: "navbar-brand" do %>
+      <%#
+        Note:
+
+        We need to add both the CSS class 'btn-transform-on-hover' AND the 'ontouchstart="return true;"' attribute to
+        the link/logo to make the 3D transform of the button work when tapping it on touch devices (iPhone etc); for
+        other (non-touch) devices, the CSS class is enough. Technique taken from:
+
+        http://phonegap-tips.com/articles/essential-phonegap-css-webkit-tap-highlight-color.html
+      %>
+      <%= link_to root_path, class: "navbar-brand btn-transform-on-hover", ontouchstart: "return true;" do %>
           <%= image_tag(ENV['APP_LOGO'] || "simple_crowd.png", class: "logo") %>
       <% end %>
 

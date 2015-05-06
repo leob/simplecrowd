@@ -1,9 +1,11 @@
-<div class="row">
-    <% @selected_projects.each do |project| %>
-        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 project-block-separator">
+<div class="row" xmlns="http://www.w3.org/1999/html">
+  <% @selected_projects.each do |project| %>
+      <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 project-block-separator">
+        <a class="project-block-link" href="<%= project_url(project) %>">
           <div class="center-block">
             <%= render partial: 'projects/block', locals: {project: project} %>
           </div>
-        </div>
-    <% end %>
+        </a>
+      </div>
+  <% end %>
 </div>

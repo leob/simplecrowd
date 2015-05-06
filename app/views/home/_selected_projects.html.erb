@@ -10,7 +10,17 @@
     </div>
 
     <div class="col-sm-3 col-xs-12">
-      <a class="btn btn-success btn-block margin-top" href="<%= projects_url %>">
+      <%#
+        Note:
+
+        We need to add both the CSS class 'btn-transform-on-hover' AND the 'ontouchstart="return true;"' attribute to
+        the button to make the 3D transform of the button work when tapping it on touch devices (iPhone etc); for other
+        (non-touch) devices, the CSS class is enough. Technique taken from:
+
+        http://phonegap-tips.com/articles/essential-phonegap-css-webkit-tap-highlight-color.html
+      %>
+      <a class="btn btn-success btn-block margin-top btn-transform-on-hover"
+         ontouchstart="return true;" href="<%= projects_url %>">
         <%= t('home.selected_projects.more_button') %> &nbsp;<i class="fa fa-arrow-circle-right"></i>
       </a>
     </div>

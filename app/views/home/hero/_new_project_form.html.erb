@@ -22,7 +22,16 @@
           ) %>
     </div>
 
-    <button class="call-to-action-btn" type="submit"
+    <%#
+        Note:
+
+        We need to add both the CSS class 'btn-transform-on-hover' AND the 'ontouchstart="return true;"' attribute to
+        the button to make the 3D transform of the button work when tapping it on touch devices (iPhone etc); for other
+        (non-touch) devices, the CSS class is enough. Technique taken from:
+
+        http://phonegap-tips.com/articles/essential-phonegap-css-webkit-tap-highlight-color.html
+    %>
+    <button class="call-to-action-btn btn-transform-on-hover" type="submit" ontouchstart="return true;"
             data-toggle="tooltip" data-placement="bottom" data-delay="500" data-html="true"
             title="<%= t('home.hero_unit.project_submit_tooltip_html') %>">
 

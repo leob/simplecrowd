@@ -1,7 +1,8 @@
 Simplecrowd::Application.routes.draw do
   root 'home#index'
 
-  get "/projects", to: "projects#index", as: "projects"
+  resources :projects
+  #get "/projects", to: "projects#index", as: "projects"
 
   #
   # Use the 'routing-filter' gem to do its magic with locale-based routes. The default locale doesn't need a special

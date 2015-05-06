@@ -109,14 +109,14 @@ class Project < ActiveRecord::Base
 
    def self.paged(page_number)
       self.unscoped do
-         self.default_order().page page_number
+         self.default_order.page page_number
       end
    end
 
    def self.search_paged(search, page_number)
       self.unscoped do
          if search
-            where("name LIKE ?", "%#{search.downcase}%").default_order().page page_number
+            where("name LIKE ?", "%#{search.downcase}%").default_order.page page_number
          else
             self.paged(page_number)
          end

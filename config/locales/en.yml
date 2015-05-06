@@ -44,6 +44,15 @@ en:
   pages:
     projects:
       title: Projects
+    project:
+      small_title: "Project #%{project_id}"
+      category: "Category:"
+      tabs:
+        overview: Overview
+        background: Background
+        updates: Updates
+        comments: Comments
+        donations: Donations
     signed_off:
       title: You are signed off now
     how_it_works:
