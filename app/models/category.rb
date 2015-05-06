@@ -1,6 +1,13 @@
 class Category < ActiveRecord::Base
    has_many :projects
 
+   # VIRTUAL PROPERTIES (calculated fields)
+
+   # returns the localized name (i.e. category.name_en or category.name_nl depending on the current locale/language)
+   def localized_name
+      send("name_" + I18n.locale.to_s.downcase)
+   end
+
    # SCOPE, ORDER, PAGING
 
    #

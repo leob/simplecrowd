@@ -4,6 +4,27 @@
 
 $project-block-adjust-height: 15px !default;
 
+.project-block-separator {
+  @media (max-width: $screen-xs-max) {
+    border-top: 1px solid lightgray;
+    margin-top: 10px;
+    padding-top: 10px;
+  }
+}
+
+//
+// Disable the default '<a>...</a>' link color for the <a>....</a> element surrounding project blocks - instead we just
+// want the stuff (text) in the project block to have the normal default colors; this is achieved by "color: inherit".
+//
+// See: http://stackoverflow.com/questions/2204634/how-to-disable-automatic-links-coloring-without-selecting-a-color
+//
+.project-block-link {
+  color: inherit;
+}
+.project-block-link:hover {
+  text-decoration: none;
+}
+
 .project-block {
   background-color: white;
   border: 1px solid #d9d9de;
@@ -100,12 +121,4 @@ ul.project-block-stats {
 
 .project-block-stats-value {
   font-weight: 700;
-}
-
-.project-block-separator {
-  @media (max-width: $screen-xs-max) {
-    border-top: 1px solid lightgray;
-    margin-top: 10px;
-    padding-top: 10px;
-  }
 }

@@ -9,7 +9,7 @@
 <% if user_signed_in? %>
 
     <li class="dropdown">
-      <a href="#" data-toggle="dropdown" class="dropdown-toggle navlink-small"><%= current_user.email %></a>
+      <a href="#" data-toggle="dropdown" class="dropdown-toggle navlink-small text-primary"><%= current_user.email %></a>
 
       <ul class="dropdown-menu">
         <li><%= nav_link("user_settings", nil) %></li>
@@ -24,7 +24,7 @@
 <% else %>
 
     <li>
-      <%= nav_link("sign_in", new_user_session_path, class: "navlink-small") %>
+      <%= nav_link("sign_in", new_user_session_path, class: "navlink-small text-primary") %>
     </li>
 
 <% end %>

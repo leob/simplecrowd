@@ -44,6 +44,15 @@ nl:
   pages:
     projects:
       title: Projecten
+    project:
+      small_title: "Project #%{project_id}"
+      category: "Categorie:"
+      tabs:
+        overview: Overview
+        background: Background
+        updates: Updates
+        comments: Comments
+        donations: Donations
     signed_off:
       title: U bent nu uitgelogd
     how_it_works:

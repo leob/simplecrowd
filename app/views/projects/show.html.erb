@@ -1,0 +1,28 @@
+<% page_title(@project.name) %>
+
+<span class="text-center">
+  <h4><%= t('pages.project.small_title', project_id: @project.id) %></h4>
+  <h1><b><%= @project.name %></b></h1>
+  <h4><%= t('pages.project.category') %> <span class="text-primary"><%= @project.category.localized_name %></span></h4>
+</span>
+
+<%#= render 'search_projects_form' %>
+
+<div class="project-tabs">
+  <ul>
+    <%= project_tab("overview") %>
+  </ul>
+</div>
+
+<div class="project-image"> <!--img-thumbnail img-responsive"-->
+  <%#
+        We use: "image_tag project.main_image.url", which is the same as: "image_tag project.main_image.url :prethumb".
+
+        This is the same because we configured ':prethumb' as the default style in config/paperclip_default.rb.
+
+        If you want another style, e.g. you want to display the original image, then you can still write:
+
+        "image_tag project.main_image.url :original".
+  %>
+  <%= image_tag @project.image.url, class: "project-block-image" %>
+</div>

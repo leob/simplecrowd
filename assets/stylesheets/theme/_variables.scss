@@ -41,6 +41,13 @@ $brand-secondary: darken(#467bab, 10%) !default;
 $brand-disabled: grey !default;
 $brand-inverse: #fff !default;
 
+// COPIED/MODIFIED FROM YETI VARIABLES
+//$brand-success:         #43ac6a !default;
+$brand-success: #47b771 !default;
+$brand-info:            #5bc0de !default;
+$brand-warning:         #E99002 !default;
+$brand-danger:          #F04124 !default;
+
 $footer-color: rgba(0, 23, 32, 0.98);
 
 $input-border-focus:             #bbb !default;
