@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby '2.4.6'
+ruby '2.4.2'
 
 gem 'rails', '4.2'
 gem 'responders', '~> 2.0'
@@ -34,9 +34,9 @@ group :production do
 end
 
 # PostgreSQL gem for Heroku
-# group :production do
+group :production do
   gem 'pg'
-# end
+end
 
 # Unicorn: http://unicorn.bogomips.org
 group :production do
