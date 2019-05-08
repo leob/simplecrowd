@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby '2.2.0'
+ruby '2.4.6'
 
 gem 'rails', '4.2'
 gem 'responders', '~> 2.0'
